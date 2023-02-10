@@ -2,7 +2,11 @@ import React from 'react'
 
 function CalenderPage() {
   return (
-    <div>CalenderPage</div>
+    <div>
+        <div>
+            Calender
+        </div>
+    </div>
   )
 }
 
