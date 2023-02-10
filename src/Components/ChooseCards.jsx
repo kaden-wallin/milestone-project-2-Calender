@@ -5,7 +5,7 @@ function ChooseCards(props) {
   return (
     <div>
         <ul>
-            <Link to={props.path}>
+            <Link to = {props.path}>
                 <figure>
                     <h1>{props.text}</h1>
                 </figure>

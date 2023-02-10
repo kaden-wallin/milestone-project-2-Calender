@@ -1,8 +1,10 @@
 import React from 'react'
 import ChooseCards from '../ChooseCards'
+import GoBackBtn from '../GoBackBtn'
 
 function ChoosePage() {
   return (
+    <div>
     <div>
         <ChooseCards 
             path = '/createevent'
@@ -12,6 +14,7 @@ function ChoosePage() {
             path='/calender'
             text = 'Calender'
         />
+    </div>
     </div>
   )
 }
