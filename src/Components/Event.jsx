@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import GoBackBtn from './GoBackBtn'
 
@@ -8,7 +8,7 @@ function Event(props) { // we're going to pass some sort of props in the future
     const [showButton, setShowButton] = useState(true)
     const path = useLocation()
 
-    const eventTitle = { title: 'event title'}
+    const eventTitle = { title: 'event title'} //I'm assuming this will eventually be an object we use to get data from the DB
 
 
     useEffect(() => {
@@ -16,8 +16,6 @@ function Event(props) { // we're going to pass some sort of props in the future
           setShowButton(false);
         }
       }, [path.pathname]);
-
-    //Another piece of sudo code to stop the button from rendering in the calender page
 
   return (
     <div>

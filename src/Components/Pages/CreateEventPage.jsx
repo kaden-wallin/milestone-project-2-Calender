@@ -1,4 +1,3 @@
-import React from 'react'
 import GoBackBtn from '../GoBackBtn'
 
 function CreateEventPage() {

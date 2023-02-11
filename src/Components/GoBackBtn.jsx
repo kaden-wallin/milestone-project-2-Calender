@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function GoBackBtn() {
@@ -10,7 +9,7 @@ function GoBackBtn() {
 
   return (
     <div>
-      <button onClick={handleClick}>Go Back</button>
+      <button onClick = {handleClick}>Go Back</button>
     </div>
   )
 }

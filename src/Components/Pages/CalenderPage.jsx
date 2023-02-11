@@ -1,4 +1,3 @@
-import React from 'react'
 import Event from '../Event'
 import { Link } from 'react-router-dom'
 import GoBackBtn from '../GoBackBtn'
