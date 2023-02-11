@@ -2,8 +2,10 @@ import React from 'react'
 import Event from '../Event'
 import { Link } from 'react-router-dom'
 import GoBackBtn from '../GoBackBtn'
+import { useState } from 'react'
 
 function CalenderPage() {
+
   return (
     <div>
         <GoBackBtn />
@@ -12,7 +14,7 @@ function CalenderPage() {
         </div>
         <div>
             <Link to = '/event'>
-                <Event />
+              <Event />
             </Link>
         </div>
     </div>
