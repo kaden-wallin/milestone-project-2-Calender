@@ -1,15 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 function GoBackBtn() {
-    const previousPage = '/'
+    const navigate = useNavigate()
 
-    // create logic that saves the previous page as some sort of variable and have the path be that variable
+    const handleClick = () => {
+      navigate(-1)
+    }
+
   return (
     <div>
-        <Link to = {previousPage}>
-            <button>Go Back</button>
-        </Link>
+      <button onClick={handleClick}>Go Back</button>
     </div>
   )
 }
