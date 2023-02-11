@@ -2,10 +2,10 @@ import React from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 function GoBackBtn() {
-    const navigate = useNavigate()
+    const previousPage = useNavigate()
 
     const handleClick = () => {
-      navigate(-1)
+      previousPage(-1)
     }
 
   return (
