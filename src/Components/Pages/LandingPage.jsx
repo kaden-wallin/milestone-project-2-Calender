@@ -4,7 +4,7 @@ function LandingPage() {
   return (
     <div>
         <Link to = '/choose'>
-            <button type = 'button'>Start</button>
+            <button className='' type = 'button'>Start</button>
         </Link>
     </div>
   )
