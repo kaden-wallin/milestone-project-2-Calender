@@ -7,8 +7,16 @@ import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
 import { render } from '@fullcalendar/core/preact';
+import { useNavigate } from 'react-router-dom'
 
 function Calender() {
+    const navigate = useNavigate()
+
+    const handleClick = () => { 
+      navigate('/event')
+    }
+
+
     const events = [
         {
             title : 'event 1', 
@@ -23,12 +31,7 @@ function Calender() {
         events = {events}
         eventContent = {eventData}
         selectable = {true}
-        eventClick = {(info) => {
-            const date = new Date(info.event.date);
-            alert(`Date: ${date.toDateString()}`)
-            
-            alert(`title: ${info.event.title}`)
-          }}
+        eventClick = {handleClick}
       />    
     )
 
