@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 function ChooseCards(props) {
   return (
-    <div>
-        <ul>
+    <div >
+        <ul >
             <Link to = {props.path}>
                 <figure>
                     <h1>{props.text}</h1>
