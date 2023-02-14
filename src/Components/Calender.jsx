@@ -1,4 +1,5 @@
-import FullCalendar from '@fullcalendar/react' // must go before plugins
+
+import FullCalendar from '@fullcalendar/react' 
 import  {Calendar}  from '@fullcalendar/core';
 import adaptivePlugin from '@fullcalendar/adaptive';
 import interactionPlugin from '@fullcalendar/interaction';

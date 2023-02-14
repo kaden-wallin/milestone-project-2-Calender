@@ -7,8 +7,8 @@ import Event from './Components/Event';
 
 function App() {
   return (
-    <div className="">
-        <Routes>
+    <div >
+        <Routes className="bg-red-600">
           <Route path='/' element={<LandingPage />}/>  
           <Route path='/choose' element={<ChoosePage />}/>
           <Route path='/createevent' element={<CreateEventPage />}/>
