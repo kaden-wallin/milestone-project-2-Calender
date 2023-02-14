@@ -1,10 +1,10 @@
 import FullCalendar from '@fullcalendar/react' // must go before plugins
-import  {Calendar}  from '@fullcalendar/core';
-import adaptivePlugin from '@fullcalendar/adaptive';
+ import  {Calendar}  from '@fullcalendar/core'; // also dont know what it does
+import adaptivePlugin from '@fullcalendar/adaptive'; // premium plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import listPlugin from '@fullcalendar/list';
-import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';// dont know what it does
+import timeGridPlugin from '@fullcalendar/timegrid'; // dont know what it does
 
 import { useNavigate } from 'react-router-dom'
 
@@ -25,7 +25,7 @@ function Calender() {
 
     return (
         <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+        plugins={[ dayGridPlugin, interactionPlugin ]}
         initialView="dayGridMonth"
         events = {events}
         eventContent = {eventData}
