@@ -1,15 +1,15 @@
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate}  from 'react-router-dom'
 
 function GoBackBtn() {
-    const previousPage = useNavigate()
+    const previousPage = useNavigate(GoBackBtn)
 
     const handleClick = () => {
       previousPage(-1)
     }
 
   return (
-    <div>
-      <button onClick = {handleClick}>Go Back</button>
+    <div >
+      <button  onClick = {handleClick}>Go Back</button>
     </div>
   )
 }

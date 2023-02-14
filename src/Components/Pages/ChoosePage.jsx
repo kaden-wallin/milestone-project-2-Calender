@@ -1,13 +1,13 @@
 import ChooseCards from '../ChooseCards'
-import GoBackBtn from '../GoBackBtn'
+
 
 function ChoosePage() {
   return (
-    <div>
-    <div>
+    <div >
+    <div className=' bg-green-500'>
         <ChooseCards 
             path = '/createevent'
-            text = 'Create Event'
+            text = ' Create Event'
         />
         <ChooseCards 
             path = '/calender'
