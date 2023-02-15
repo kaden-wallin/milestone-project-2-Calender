@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Friend extends Model {
+  class SiteIDmap extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,34 +13,22 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Friend.init({
-    friend_id: { 
+  SiteIDmap.init({
+    user_ID: { 
         type: DataTypes.INTEGER, 
         primaryKey: true, 
         autoIncrement: true
     },
-    friend_list: { 
-        type: DataTypes.INTEGER, 
-        allowNull: false 
-    },
-    event_foreign_key: {
-    type: DataTypes.SMALLINT,
-    allowNull: false
-    },
-    access_foreign_key: {
-    type: DataTypes.SMALLINT,
-    allowNull: false
-    },
-    user_foreign_key: {
+    friends_ID: {
     type: DataTypes.SMALLINT,
     allowNull: false
     },
 }, {
 	sequelize,
-	modelName: 'Friend',
-	tableName: 'friend',
+	modelName: 'SiteIDmap',
+	tableName: 'siteIDmap',
 	timestamps: false
 })
 
-  return Friend;
+  return SiteIDmap;
 };

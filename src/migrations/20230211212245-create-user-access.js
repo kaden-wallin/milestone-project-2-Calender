@@ -2,32 +2,28 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('friend', {
-        friend_id: {
+    await queryInterface.createTable('user', {
+        email_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      friend_list: {
-        type: Sequelize.INTEGER,
+      user_email: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      user_foreign_key: {
-        type: Sequelize.SMALLINT,
+      user_password: {
+        type: Sequelize.STRING,
         allowNull: false
       },
-      access_foreign_key: {
-        type: Sequelize.SMALLINT,
-        allowNull: false,
-      },
-        event_foreign_key: {
+      site_ID_map: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }
     })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('friend')
+    await queryInterface.dropTable('user')
   }
-}
+};

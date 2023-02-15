@@ -14,24 +14,24 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Event.init({
-    event_id: { 
+    event_ID: { 
         type: DataTypes.INTEGER, 
         primaryKey: true, 
         autoIncrement: true
     },
-    event_name: { 
+    event_title: { 
         type: DataTypes.STRING, 
         allowNull: false 
     },
-    details: { 
-        type: DataTypes.INTEGER, 
+    event_location: { 
+        type: DataTypes.STRING, 
         allowNull: false 
     },
-    user_foreign_key: {
-    type: DataTypes.SMALLINT,
-    allowNull: false
+    event_date: {
+      type: DataTypes.DATE,
+      allowNull: false
     },
-    friend_foreign_key: {
+    site_ID_map: {
     type: DataTypes.SMALLINT,
     allowNull: false
     },

@@ -14,24 +14,20 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    user_id: { 
+    email_id: { 
         type: DataTypes.INTEGER, 
         primaryKey: true, 
         autoIncrement: true
     },
-    user_data: { 
-        type: DataTypes.INTEGER, 
+    user_email: { 
+        type: DataTypes.STRING, 
         allowNull: false 
     },
-    event_foreign_key: {
-    type: DataTypes.SMALLINT,
+    user_password: {
+    type: DataTypes.STRING,
     allowNull: false
     },
-    access_foreign_key: {
-    type: DataTypes.SMALLINT,
-    allowNull: false
-    },
-    friend_foreign_key: {
+    site_ID_map: {
     type: DataTypes.SMALLINT,
     allowNull: false
     },

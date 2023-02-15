@@ -3,17 +3,17 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('report', {
-        report_id: {
+        report_user_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      report_info: {
-        type: Sequelize.INTEGER,
+      report_user_email: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-        user_foreign_key: {
+        site_ID_map: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }

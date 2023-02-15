@@ -3,25 +3,25 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('event', {
-        event_id: {
+        event_ID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      event_name: {
+      event_title: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      details: {
-        type: Sequelize.INTEGER,
+      event_location: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      user_foreign_key: {
-        type: Sequelize.SMALLINT,
+      event_date: {
+        type: Sequelize.DATE,
         allowNull: false
       },
-      friend_foreign_key: {
+      site_ID_map: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }
