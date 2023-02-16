@@ -4,17 +4,26 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    
+    static associate({ Friend, Event, Report }) {
+      User.hasMany(Friend, {
+        foreignKey: "user_ID",
+        as: "friends"
+      }) 
+
+      User.hasMany(Event, {
+        foreignKey: "user_ID",
+        as: "events"
+      }) 
+
+      User.hasMany(Report, {
+        foreignKey: "user_ID",
+        as: "reports"
+      })
     }
   }
   User.init({
-    email_id: { 
+    user_id: { 
         type: DataTypes.INTEGER, 
         primaryKey: true, 
         autoIncrement: true
@@ -25,10 +34,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     user_password: {
     type: DataTypes.STRING,
-    allowNull: false
-    },
-    site_ID_map: {
-    type: DataTypes.SMALLINT,
     allowNull: false
     },
 }, {

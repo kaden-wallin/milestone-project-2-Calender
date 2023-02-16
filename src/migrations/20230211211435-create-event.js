@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
-      site_ID_map: {
+      user_ID: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }

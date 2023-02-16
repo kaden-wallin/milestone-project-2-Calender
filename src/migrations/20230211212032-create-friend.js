@@ -3,17 +3,13 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('friend', {
-        friend_count: {
+        friend_ID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      friend_ID: {
-        type: Sequelize.SMALLINT,
-        allowNull: false,
-      },
-      site_ID_map: {
+      user_ID: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }

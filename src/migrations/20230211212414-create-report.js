@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-        site_ID_map: {
+        user_ID: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }
