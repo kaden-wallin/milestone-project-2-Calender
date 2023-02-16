@@ -1,20 +1,24 @@
 // DEPENDENCIES
 const { Sequelize } = require('sequelize')
 const express = require('express')
+const cors = require("cors");
 const app = express()
+const path = require("path");
 const port = process.env.PORT || 4002;
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(express.static(path.join(__dirname, "public")));
 
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize({
     storage: process.env.PG_URI,
     dialect: 'postgres',
     username: 'postgres',
-    password: 'my_password'
+    password: process.env.PG_PASSWORD
   })
 
 try {
@@ -25,12 +29,22 @@ try {
 }
 
 
+//serverside static rendering
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+    console.log(path.join(__dirname, "public", "index.html"))
+   });
+
 // ROOT
 app.get('/backend', (req, res) => {
     res.status(200).json({
         message: 'Welcome to the Calender App'
     })
 })
+
+//CONTROLLERS
+const eventsController = require('./controller/event_controller')
+app.use('/events', eventsController)
 
 // LISTEN
 app.listen(port, () => {
