@@ -4,7 +4,7 @@ import ChooseCards from '../ChooseCards'
 function ChoosePage() {
   return (
     <div >
-    <div className=' bg-green-500'>
+    <div className=' text-center'>
         <ChooseCards 
             path = '/createevent'
             text = ' Create Event'

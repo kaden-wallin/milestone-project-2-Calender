@@ -2,7 +2,7 @@ import GoBackBtn from '../GoBackBtn'
 
 function CreateEventPage() {
   return (
-    <div>
+    <div className=' text-center'>
         <GoBackBtn />
         <form>
             <label htmlFor = "event-title">Event Title</label>

@@ -8,7 +8,7 @@ function GoBackBtn() {
     }
 
   return (
-    <div >
+    <div className=' text-center' >
       <button  onClick = {handleClick}>Go Back</button>
     </div>
   )

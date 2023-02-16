@@ -18,7 +18,7 @@ function Event(props) { // we're going to pass some sort of props in the future
       }, [path.pathname]);
 
   return (
-    <div>
+    <div className=' text-center'>
         {showButton && <GoBackBtn />}
         <div>
             {eventTitle.title}

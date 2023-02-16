@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function ChooseCards(props) {
   return (
-    <div >
+    <div  className=' text-center'>
         <ul >
             <Link to = {props.path}>
                 <figure>
