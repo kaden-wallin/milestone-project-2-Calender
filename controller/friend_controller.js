@@ -27,12 +27,12 @@ friends.get('/:title', async (req, res) => {
     }
 })
 
-//CREATE AN FRIEND
+//ADD A FRIEND
 friends.post('/', async (req, res) => {
     try {
         const newFriend = await friend.create(req.body)
         res.status(200).json({
-            message: 'Successfully added a new friend to the calendar',
+            message: `Successfully befriended ${newFriend}`,
             data: newFriend
         })
     } 
@@ -41,23 +41,7 @@ friends.post('/', async (req, res) => {
     }
 })
 
-//UPDATE AN FRIEND
-friends.put('/:id', async (req, res) => {
-    try {
-        const updatedFriends = await friend.update(req.body, {
-            where: {
-                friend_id: req.params.id
-            }
-        })
-        res.status(200).json({
-            message: `Successfully updated ${updatedFriends} friend(s)`
-        })
-    } catch(err) {
-        res.status(500).json(err)
-    }
-})
-
-//DELETE AN FRIEND
+//DELETE A FRIEND
 friends.delete('/:id', async (req, res) => {
     try {
         const deletedFriends = await friend.destroy({
@@ -66,7 +50,7 @@ friends.delete('/:id', async (req, res) => {
             }
         })
         res.status(200).json({
-            message: `Successfully deleted ${deletedFriends} friend(s)`
+            message: `Successfully removed ${deletedFriends} friend(s)`
         })
     } catch(err) {
         res.status(500).json(err)
