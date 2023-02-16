@@ -2,24 +2,32 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('report', {
-        report_id: {
+    await queryInterface.createTable('event', {
+        event_ID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      report_info: {
-        type: Sequelize.INTEGER,
+      event_title: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-        user_foreign_key: {
+      event_location: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      event_date: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      user_ID: {
         type: Sequelize.SMALLINT,
         allowNull: false,
       }
     })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('report')
+    await queryInterface.dropTable('event')
   }
-};
+}

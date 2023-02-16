@@ -3,28 +3,20 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('user', {
-        user_id: {
+        user_ID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_data: {
-        type: Sequelize.INTEGER,
+      user_email: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      access_foreign_key: {
-        type: Sequelize.SMALLINT,
+      user_password: {
+        type: Sequelize.STRING,
         allowNull: false
       },
-      friend_foreign_key: {
-        type: Sequelize.SMALLINT,
-        allowNull: false,
-      },
-        event_foreign_key: {
-        type: Sequelize.SMALLINT,
-        allowNull: false,
-      }
     })
   },
   down: async (queryInterface, Sequelize) => {

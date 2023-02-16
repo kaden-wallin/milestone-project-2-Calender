@@ -42,6 +42,10 @@ app.get('/backend', (req, res) => {
     })
 })
 
+//CONTROLLERS
+const eventsController = require('./controller/event_controller')
+app.use('/events', eventsController)
+
 // LISTEN
 app.listen(port, () => {
     console.log(`🎸 Rockin' on port: ${port}`)
