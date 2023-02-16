@@ -1,13 +1,17 @@
 // DEPENDENCIES
 const { Sequelize } = require('sequelize')
 const express = require('express')
+const cors = require("cors");
 const app = express()
+const path = require("path");
 const port = process.env.PORT || 4002;
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(express.static(path.join(__dirname, "public")));
 
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize({
@@ -25,6 +29,11 @@ try {
 }
 
 
+//serverside static rendering
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+    console.log(path.join(__dirname, "public", "index.html"))
+   });
 
 // ROOT
 app.get('/backend', (req, res) => {
