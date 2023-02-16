@@ -12,7 +12,11 @@ module.exports = {
       user_ID: {
         type: Sequelize.SMALLINT,
         allowNull: false,
-      }
+      },
+      accepted_friends: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
     })
   },
   down: async (queryInterface, Sequelize) => {

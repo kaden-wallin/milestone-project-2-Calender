@@ -35,16 +35,16 @@ app.get('/backend', (req, res) => {
 
 //CONTROLLERS
 const eventsController = require('./controller/event_controller')
-app.use('/events', eventsController)
+app.use('/api/events', eventsController)
 
 const friendsController = require('./controller/friend_controller')
-app.use('/friends', friendsController)
+app.use('/api/friends', friendsController)
 
 const usersController = require('./controller/user_controller')
-app.use('/users', usersController)
+app.use('/api/users', usersController)
 
 const reportsController = require('./controller/report_controller')
-app.use('/reports', reportsController)
+app.use('/api/reports', reportsController)
 
 // LISTEN
 app.listen(port, () => {

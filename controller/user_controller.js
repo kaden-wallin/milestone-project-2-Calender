@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const users = require('express').Router()
-const db = require('../models')
+const db = require('../src/models')
 const { User } = db
 
 //CREATE AN ACCOUNT

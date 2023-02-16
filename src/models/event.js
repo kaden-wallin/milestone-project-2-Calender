@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     event_location: { 
         type: DataTypes.STRING, 
-        allowNull: true 
+        allowNull: false 
     },
     event_date: {
       type: DataTypes.DATE,
