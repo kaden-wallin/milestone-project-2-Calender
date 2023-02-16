@@ -1,10 +1,6 @@
 import FullCalendar from '@fullcalendar/react' // must go before plugins
  import  {Calendar}  from '@fullcalendar/core'; // also dont know what it does
 import adaptivePlugin from '@fullcalendar/adaptive'; // premium plugin
-
-import FullCalendar from '@fullcalendar/react' 
-import  {Calendar}  from '@fullcalendar/core';
-import adaptivePlugin from '@fullcalendar/adaptive';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';// dont know what it does
