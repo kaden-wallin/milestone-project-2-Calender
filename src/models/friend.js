@@ -14,18 +14,22 @@ module.exports = (sequelize, DataTypes) => {
   }
   Friend.init({
     friend_ID: { 
-        type: DataTypes.INTEGER, 
-        primaryKey: true, 
-        autoIncrement: true
+      type: DataTypes.INTEGER, 
+      primaryKey: true, 
+      autoIncrement: true
     },
     user_ID: {
-    type: DataTypes.SMALLINT,
-    allowNull: false
+      type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    accepted_friends: {
+      type: DataTypes.TEXT,
+      allowNull: false
     },
 }, {
 	sequelize,
 	modelName: 'Friend',
-	tableName: 'friend',
+	tableName: 'friends',
 	timestamps: false
 })
 

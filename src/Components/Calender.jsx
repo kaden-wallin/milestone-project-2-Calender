@@ -18,7 +18,8 @@ function Calender() {
 
     const events = [
         {
-            title :  'event 1', 
+            title :  'event 1',
+            location: 'Paris, Texas', 
             date: '2023-02-18'
         }
     ]

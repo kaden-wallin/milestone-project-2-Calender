@@ -1,9 +1,9 @@
 // DEPENDENCIES
-const { Sequelize } = require('sequelize')
 const express = require('express')
 const cors = require("cors");
 const app = express()
-const path = require("path");
+const path = require('path')
+const { Sequelize } = require('sequelize')
 const port = process.env.PORT || 4002;
 
 // CONFIGURATION / MIDDLEWARE
@@ -44,7 +44,16 @@ app.get('/backend', (req, res) => {
 
 //CONTROLLERS
 const eventsController = require('./controller/event_controller')
-app.use('/events', eventsController)
+app.use('/api/events', eventsController)
+
+const friendsController = require('./controller/friend_controller')
+app.use('/api/friends', friendsController)
+
+const usersController = require('./controller/user_controller')
+app.use('/api/users', usersController)
+
+const reportsController = require('./controller/report_controller')
+app.use('/api/reports', reportsController)
 
 // LISTEN
 app.listen(port, () => {

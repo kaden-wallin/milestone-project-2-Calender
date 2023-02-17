@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const events = require('express').Router()
-const db = require('../models')
+const db = require('../src/models')
 const { Event } = db
 
 //FIND ALL EVENTS
@@ -10,7 +10,8 @@ events.get('/', async (req, res) => {
         res.status(200).json(foundEvents)
     }
     catch (error) {
-        res.status(500).json(error)
+        res.status(500).send("Server error")
+        console.log(err)
     }
 })
 
