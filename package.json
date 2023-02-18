@@ -22,11 +22,7 @@
     "express": "^4.18.2",
     "pg": "^8.9.0",
     "pg-hstore": "^2.3.4",
-<<<<<<< HEAD
-    "postcss-flexbugs-fixes": "^5.0.0",
-=======
     "postcss-flexbugs-fixes": "^5.0.2",
->>>>>>> 495c6ba0881a89d7902dbc11196421789b8c982a
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
@@ -35,15 +31,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-<<<<<<< HEAD
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-=======
     "start": "npm start",
     "build": "npm run build",
     "test": "npm test",
->>>>>>> 495c6ba0881a89d7902dbc11196421789b8c982a
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -65,15 +55,8 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@craco/craco": "^6.4.5",
-    "autoprefixer": "^0.8.20131213",
-    "postcss": "^4.0.3",
-=======
-    "@craco/craco": "^7.0.0",
     "autoprefixer": "^9.8.8",
     "postcss": "^8.4.21",
->>>>>>> 495c6ba0881a89d7902dbc11196421789b8c982a
     "postcss-loader": "^7.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
