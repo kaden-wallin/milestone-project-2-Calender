@@ -10,6 +10,8 @@ function Event(props) { // we're going to pass some sort of props in the future
 
     const eventTitle = { event_title: 'event title'} //I'm assuming this will eventually be an object we use to get data from the DB
 
+    const { title, date } = props
+
 
     useEffect(() => {
         if (path.pathname === '/calender') {
@@ -17,12 +19,12 @@ function Event(props) { // we're going to pass some sort of props in the future
         }
       }, [path.pathname]);
 
+      // console.log(title)
   return (
     <div>
         {showButton && <GoBackBtn />}
         <div>
-            {eventTitle.title}
-
+            {props.title}
         </div>
     </div>
   )

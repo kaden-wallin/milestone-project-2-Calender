@@ -14,11 +14,6 @@ function CalenderPage() {
         <div className=' bg-red-600' >
             <Calender />
         </div>
-        <div >
-            <Link to = '/event'>
-              <Event />
-            </Link>
-        </div>
     </div>
   )
 }
