@@ -53,7 +53,7 @@ function Calender() {
         events = {eventInfo}
         eventContent = {eventInfo.title}
         selectable = {true}
-        eventClick = {handleNavigateClick}
+        eventClick = {handleClick}
       /> 
          
     )
