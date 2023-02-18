@@ -7,11 +7,11 @@ function CalenderPage() {
 
   return (
     <div >
-        <div className=' bg-blue-200'>
+        <div className=' bg-red-400'>
         <GoBackBtn />
         </div>
         
-        <div className=' bg-red-600' >
+        <div className=' bg-gray-100' >
             <Calender />
         </div>
         <div >
