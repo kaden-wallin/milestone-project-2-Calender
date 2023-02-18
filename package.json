@@ -18,20 +18,22 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "all": "^0.0.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "pg": "^8.9.0",
     "pg-hstore": "^2.3.4",
+    "postcss-flexbugs-fixes": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^4.0.3",
     "sequelize": "^6.28.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm start",
-     "build": "npm run build",
-     "test": "npm test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -53,8 +55,10 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
+    "@craco/craco": "^6.4.5",
+    "autoprefixer": "^0.8.20131213",
+    "postcss": "^4.0.3",
+    "postcss-loader": "^7.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
