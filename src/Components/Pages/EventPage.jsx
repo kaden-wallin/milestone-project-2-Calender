@@ -28,7 +28,8 @@ function EventPage() {
 
   return (
     <div>
-        <Event key={id} id={eventInfo.event_ID} date={eventInfo.event_date} title={eventInfo.event_title} location={eventInfo.event_location}></Event>   </div>
+        <Event key={id} id={eventInfo.event_ID} date={eventInfo.event_date} title={eventInfo.event_title} location={eventInfo.event_location}></Event>   
+    </div>
   )
 }
 

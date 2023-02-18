@@ -50,23 +50,14 @@ function Calender() {
         <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
         initialView="dayGridMonth"
-        events = {events}
-        eventContent = {eventData}
+        events = {eventInfo}
+        eventContent = {(event) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location}></Event>   }
         selectable = {true}
         eventClick = {handleClick}
       /> 
          
     )
     
-  }
-
-  function eventData(eventInfo) {
-    return (
-        <div >
-            <b >{eventInfo.event.date}</b>
-            <i>{eventInfo.event.title}</i>
-        </div>
-    )
   }
   
   export default Calender
