@@ -9,12 +9,10 @@ function Event(props) { // we're going to pass some sort of props in the future
 
    console.log(' props:', props)
 
-
     const path = useLocation()
 
     const { title } = useParams();
 
-    // gets object based on the param name
    // prevents btn from rendering in the calender
      useEffect(() => {
        if (path.pathname === '/calender') {
