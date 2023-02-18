@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+    fc.fc-toolbar-title {
+        font-size: 1.25rem !important;
+        margin: 0;
+        font-weight: 500;
+        padding: 20px 0 0px 20px !important;
+    }
+    
+    .fc .fc-button {
+        background-color: #006082 !important;
+        border-color: #006082 !important;
+    }
+    
+    
+    
+    .fc-theme-standard td {
+    font: bold !important;
+        background-color: red!important;
+        align-items: center !important;
+
+        
+    } 
+    
+    .fc-day-other {
+       
+        font: bold !important;
+    }
+    
+    .fc .fc-button .fc-icon {
+        font-size: 0.875rem !important;
+    }
+    
+    a.fc-col-header-cell-cushion {
+        font-size: .85em !important;
+        line-height: 2.2rem !important;
+        font-weight: 600 !important;
+        font: bold !important;
+        
+    }
+    
+    .fc .fc-daygrid-day-top {
+        flex-direction: inherit !important;
+        padding: 5px !important;
+        font-size: .75em !important;
+        font: bold !important;
+        
+    }
+    
+    
+    .fc .fc-button-primary:disabled {
+        background-color: #eeeeee !important;
+        color: black !important;
+        border-color: #eeeeee !important;
+        font-size: 0.875rem !important;
+        line-height: 1.25rem !important;
+        text-transform: capitalize !important;
+        font: bold !important;
+    }

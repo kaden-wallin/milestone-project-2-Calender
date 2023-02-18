@@ -6,19 +6,19 @@ import Calender from '../Calender'
 function CalenderPage() {
 
   return (
-    <div >
-        <div className=' '>
+    <div  >
+      <div >
         <GoBackBtn />
-        </div>
-        
-        <div className=' ' >
-            <Calender />
-        </div>
-        <div >
-            <Link to = '/event'>
-              <Event />
-            </Link>
-        </div>
+      </div>
+
+      <div  >
+        <Calender />
+      </div>
+      <div >
+        <Link to='/event'>
+          <Event />
+        </Link>
+      </div>
     </div>
   )
 }

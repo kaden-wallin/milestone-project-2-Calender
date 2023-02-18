@@ -7,14 +7,14 @@ import Event from './Components/Event';
 
 function App() {
   return (
-    <div >
-        <Routes className="bg-red-600">
-          <Route path='/' element={<LandingPage />}/>  
-          <Route path='/choose' element={<ChoosePage />}/>
-          <Route path='/createevent' element={<CreateEventPage />}/>
-          <Route path = '/calender'   element={<CalenderPage />}/>
-          <Route path='/event' element={<Event />}/> {/*The path should be some sort of params.name */}
-        </Routes>  
+    <div className=' ' >
+      <Routes >
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/choose' element={<ChoosePage />} />
+        <Route path='/createevent' element={<CreateEventPage />} />
+        <Route path='/calender' element={<CalenderPage />} />
+        <Route path='/event' element={<Event />} /> {/*The path should be some sort of params.name */}
+      </Routes>
     </div>
   );
 }

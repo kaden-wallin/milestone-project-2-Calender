@@ -3,17 +3,17 @@ import ChooseCards from '../ChooseCards'
 
 function ChoosePage() {
   return (
-    <div >
-    <div className=' text-center'>
-        <ChooseCards 
-            path = '/createevent'
-            text = ' Create Event'
+    <div className=' text-center font-bold'>
+      <div >
+        <ChooseCards
+          path='/createevent'
+          text=' Create Event'
         />
-        <ChooseCards 
-            path = '/calender'
-            text = 'Calender'
+        <ChooseCards
+          path='/calender'
+          text='Calender'
         />
-    </div>
+      </div>
     </div>
   )
 }
