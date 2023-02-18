@@ -32,8 +32,8 @@ try {
 //serverside static rendering
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
-    console.log(path.join(__dirname, "public", "index.html"))
    });
+   
 
 // ROOT
 app.get('/backend', (req, res) => {
@@ -41,6 +41,7 @@ app.get('/backend', (req, res) => {
         message: 'Welcome to the Calender App'
     })
 })
+
 
 // LISTEN
 app.listen(port, () => {
