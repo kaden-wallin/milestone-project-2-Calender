@@ -31,9 +31,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "npm start",
+    "build": "npm run build",
+    "test": "npm test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -55,7 +55,6 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.0.0",
     "autoprefixer": "^9.8.8",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
