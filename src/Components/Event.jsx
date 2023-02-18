@@ -29,7 +29,11 @@ function Event(props) { // we're going to pass some sort of props in the future
        }
      
 
-  console.log('id:', title);
+  useEffect(() => {
+    if (path.pathname === '/calender') {
+      setShowButton(false);
+    }
+  }, [path.pathname]);
 
   return (
     <div>

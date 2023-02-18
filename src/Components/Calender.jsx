@@ -1,6 +1,7 @@
-import FullCalendar from '@fullcalendar/react' // must go before plugins
- import  {Calendar}  from '@fullcalendar/core'; // also dont know what it does
-import adaptivePlugin from '@fullcalendar/adaptive'; // premium plugin
+
+import FullCalendar from '@fullcalendar/react'
+import  {Calendar}  from '@fullcalendar/core';
+import adaptivePlugin from '@fullcalendar/adaptive';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';// dont know what it does
@@ -44,22 +45,28 @@ function Calender() {
     navigate(`/event/${eventId}`);
   }
 
-  console.log(' yo ',eventInfo)
 
     return (
         <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin ]}
+        plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
         initialView="dayGridMonth"
-        events = {eventInfo}
-        eventContent = {({ event }) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location} />}
+        events = {events}
+        eventContent = {eventData}
         selectable = {true}
-        eventClick = {handleNavigateClick}
+        eventClick = {handleClick}
       /> 
          
     )
     
-  
   }
-  
+
+  function eventData(eventInfo) {
+    return (
+        <div >
+            <b >{eventInfo.event.date}</b>
+            <i>{eventInfo.event.title}</i>
+        </div>
+    )
+  }
   
   export default Calender
