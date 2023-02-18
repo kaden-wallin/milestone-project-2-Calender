@@ -1,6 +1,14 @@
 import GoBackBtn from '../GoBackBtn'
 
+
+
+
+
 function CreateEventPage() {
+  const newEvent = async (e) => {
+    e.preventDefault()
+  }
+
   return (
     <div>
         <GoBackBtn />
