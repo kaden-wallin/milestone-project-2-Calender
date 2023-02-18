@@ -3,8 +3,8 @@ import LandingPage from './Components/Pages/LandingPage';
 import ChoosePage from './Components/Pages/ChoosePage';
 import CreateEventPage from './Components/Pages/CreateEventPage';
 import CalenderPage from './Components/Pages/CalenderPage';
-import Event from './Components/Event';
 import { useEffect, useState } from 'react';
+import EventPage from './Components/Pages/EventPage';
 
 function App() {
   const [message, setMessage] = useState("");
@@ -24,7 +24,7 @@ function App() {
           <Route path='/choose' element={<ChoosePage />}/>
           <Route path='/createevent' element={<CreateEventPage />}/>
           <Route path = '/calender'   element={<CalenderPage />}/>
-          <Route path='/event' element={<Event />}/> {/*The path should be some sort of params.name */}
+          <Route path='/event/:id' element={<EventPage />}/>
         </Routes>  
     </div>
   );
