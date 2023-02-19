@@ -7,8 +7,6 @@ function Event(props) { // we're going to pass some sort of props in the future
     
    const [showButton, setShowButton] = useState(true)
 
-   console.log(' props:', props)
-
     const path = useLocation()
 
     const { title } = useParams();
@@ -25,13 +23,6 @@ function Event(props) { // we're going to pass some sort of props in the future
         console.log('id:', title);
           return <div>Page Not Found</div>
        }
-     
-
-       useEffect(() => {
-        if (path.pathname === '/calender') {
-          setShowButton(false);
-        }
-      }, [path.pathname])
 
   return (
     <div>
