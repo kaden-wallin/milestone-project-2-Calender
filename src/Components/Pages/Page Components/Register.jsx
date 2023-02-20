@@ -5,6 +5,19 @@ export const Register = (props) => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     
+    
+        useEffect(()=> {
+        const postData = aysnc () => {
+             fetch('http://localhost:4002/api/users/')
+                .then(response => response.json())
+                .then(newAccount => {
+                    body: JSON.stringify({a: null, b: 'email', c: 'pass'})
+                } )
+            
+        }
+        postData()
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(email)
@@ -24,4 +37,5 @@ export const Register = (props) => {
         </>
         
     )
+    
 }
