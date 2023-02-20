@@ -17,6 +17,13 @@ users.post('/', async (req, res) => {
     }
 })
 
+//CHECK AN ACCOUNT 
+
+users.get('/email/:id', (req,res) => {
+    let verify = getUserEmail(req.params.id);
+    res.send(verify);
+})
+
 //UPDATE ACCOUNT
 users.put('/:id', async (req, res) => {
     try {
