@@ -8,7 +8,7 @@ const port = process.env.PORT || 4002;
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:4001' }));
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "public")));
@@ -31,7 +31,7 @@ try {
 
 //serverside static rendering
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"))
     console.log(path.join(__dirname, "public", "index.html"))
    });
 
@@ -41,6 +41,14 @@ app.get('/backend', (req, res) => {
         message: 'Welcome to the Calender App'
     })
 })
+
+//Access-Control-Allow-Origin
+// app.use(function(req, res, next) {
+//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4001')
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
+//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+//     next()
+//   })
 
 //CONTROLLERS
 const eventsController = require('./controller/event_controller')
