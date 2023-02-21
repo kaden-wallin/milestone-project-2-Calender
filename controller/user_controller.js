@@ -6,10 +6,22 @@ const { User } = db
 //CREATE AN ACCOUNT
 users.post('/', async (req, res) => {
     try {
-        const newAccount = await User.create(req.body)
+        const {userEmail, userPassword} = req.body;
+        db('user_access')
+            .insert({
+                user_email:userEmail,
+                user_password:userPassword
+            })
+            .then(() =>{
+                console.log('Account Added!')
+                return res.json({msg: 'Account Added'})
+            })
+            .catch((err) => {
+                console.log(err)
+            })
         res.status(200).json({
             message: 'Successfully registered',
-            data: newAccount
+
         })
     } 
     catch(err) {
