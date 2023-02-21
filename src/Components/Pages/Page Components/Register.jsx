@@ -1,7 +1,7 @@
 import { useRouter } from 'react-router';
 import { useState } from 'react';
 import useCreateUser from './Hooks/useCreateUser';
-import { create } from 'domain';
+
 
 
 export default function Register() {
@@ -14,7 +14,7 @@ export default function Register() {
     })
 
     if (createUserMutation.isSuccess) {
-        router.push("/")
+        users.post("/users/register")
     }
   
 

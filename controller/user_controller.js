@@ -4,24 +4,14 @@ const db = require('../src/models')
 const { User } = db
 
 //CREATE AN ACCOUNT
-users.post('/', async (req, res) => {
+users.post('/login', async (req, res) => {
     try {
-        const {userEmail, userPassword} = req.body;
-        db('user_access')
-            .insert({
-                user_email:userEmail,
-                user_password:userPassword
-            })
-            .then(() =>{
-                console.log('Account Added!')
-                return res.json({msg: 'Account Added'})
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        let username = req.body.username;
+        let password = req.body.password
+        res.send (`Username: ${user_email} Password: ${user_password}`)
         res.status(200).json({
             message: 'Successfully registered',
-
+            data: newAccount
         })
     } 
     catch(err) {
