@@ -11,7 +11,6 @@ events.get('/', async (req, res) => {
     }
     catch (err) {
         res.status(500).send("Server error")
-        console.log(err)
     }
 })
 
@@ -32,6 +31,7 @@ events.get('/:id', async (req, res) => {
 events.post('/', async (req, res) => {
     try {
         const newEvent = await Event.create(req.body)
+       // console.log(newEvent) //Not an Issue(data gets passed correctly)
         res.status(200).json({
             message: 'Successfully added a new event to the calendar',
             data: newEvent
@@ -39,6 +39,7 @@ events.post('/', async (req, res) => {
     } 
     catch(err) {
         res.status(500).json(err)
+        console.log(err)
     }
 })
 
@@ -63,7 +64,7 @@ events.delete('/:id', async (req, res) => {
     try {
         const deletedEvents = await Event.destroy({
             where: {
-                event_id: req.params.id
+                event_ID: req.params.id
             }
         })
         res.status(200).json({

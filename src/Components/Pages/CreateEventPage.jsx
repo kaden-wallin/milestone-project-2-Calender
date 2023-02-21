@@ -2,33 +2,31 @@ import GoBackBtn from '../GoBackBtn'
 
 function CreateEventPage() {
 
-  function handleSubmit(event) {
-    event.preventDefault(); // prevent the default form submission behavior
-    console.log('Form submitted');
+  //Potential over engineered idea. Get the inputs from the form assign them to a useState variable input those variables to an object turns into json and send that to the db.
 
-
-    // get the form data
-    const formData = new FormData(event.target);
-
-    // send an HTTP request to the server
-    fetch('http://localhost:4002/api/events', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      // handle the response from the server
-      console.log(response);
-    })
-    .catch(error => {
-      // handle any errors that occur
-      console.error(error);
-    });
+  async function handleSubmit(event) {
+    try {
+      event.preventDefault(); 
+      console.log('Form submitted');
+  
+      // get the form data
+      const formData = new FormData(event.target);
+  
+      const res = await fetch('http://localhost:4002/api/events', {
+        method: 'POST',
+        body: formData
+      });
+  
+      console.log(res);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
     <div>
         <GoBackBtn />
-        <form onSubmit={handleSubmit}>
+        <form id='create-event-form' onSubmit={handleSubmit}>
             <label htmlFor="event-title">Event Title</label>
             <input id="event-title" type="text" name="title" required />
             <label htmlFor="choose-date">Date</label>

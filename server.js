@@ -13,6 +13,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "public")));
 
+
+//!!! Check if this is causing issues or is old redundant code
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize({
     storage: process.env.PG_URI,
@@ -23,16 +25,16 @@ const sequelize = new Sequelize({
 
 try {
     sequelize.authenticate() 
-    console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
+   // console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
 } catch(err) {
-    console.log(`Unable to connect to PG: ${err}`) 
+   // console.log(`Unable to connect to PG: ${err}`) 
 }
 
 
 //serverside static rendering
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"))
-    console.log(path.join(__dirname, "public", "index.html"))
+  //  console.log(path.join(__dirname, "public", "index.html"))
    });
 
 // ROOT
