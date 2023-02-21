@@ -13,12 +13,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Report.init({
-    report_user_ID: { 
+    reported_user_ID: { 
         type: DataTypes.INTEGER, 
         primaryKey: true, 
         autoIncrement: true
     },
-    report_user_email: { 
+    reported_user_email: { 
         type: DataTypes.STRING, 
         allowNull: false 
     },

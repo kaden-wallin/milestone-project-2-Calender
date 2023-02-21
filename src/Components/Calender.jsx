@@ -1,19 +1,20 @@
-import FullCalendar from '@fullcalendar/react' // must go before plugins
- import  {Calendar}  from '@fullcalendar/core'; // also dont know what it does
-import adaptivePlugin from '@fullcalendar/adaptive'; // premium plugin
+
+import FullCalendar from '@fullcalendar/react'
+import  {Calendar}  from '@fullcalendar/core';
+import adaptivePlugin from '@fullcalendar/adaptive';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';// dont know what it does
 import timeGridPlugin from '@fullcalendar/timegrid'; // dont know what it does
 import Event from './Event';
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { identity } from '@fullcalendar/core/internal';
 
 function Calender() {
   const navigate = useNavigate()
-
+ 
   const [eventInfo, setEventInfo] = useState([])
 
 
@@ -31,27 +32,32 @@ function Calender() {
     fetchData();
   }, []);
 
+  // const { id } = useParams()
 
-    const handleNavigateClick = () => { 
-      navigate('/event')
-    }
+  const eventParam = (event) => {
+    return event.id;
+  }
 
+  // creates path for each item in the calender
+  const handleNavigateClick = (eventClickInfo) => {
+    const event = eventClickInfo.event;
+    const eventId = eventParam(event);
+    navigate(`/event/${eventId}`);
+  }
 
 
     return (
         <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin ]}
+        plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
         initialView="dayGridMonth"
         events = {eventInfo}
-        eventContent = {({ event }) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location} />}
+        eventContent = {eventInfo.title}
         selectable = {true}
-        eventClick = {handleNavigateClick}
+        eventClick = {handleClick}
       /> 
          
     )
     
-  
   }
-  
   
   export default Calender
