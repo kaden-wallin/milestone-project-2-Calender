@@ -14,7 +14,7 @@ export default function Register() {
     })
 
     if (createUserMutation.isSuccess) {
-        users.post("/users/register")
+        router.post("/users/register")
     }
   
 
