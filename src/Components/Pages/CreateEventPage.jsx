@@ -11,7 +11,9 @@ function CreateEventPage() {
             <input id = 'choose-date' type = 'date' ></input>
             <label htmlFor = "location">Event Location</label>
             <input id = 'location' type = 'text' ></input>
+            <input type="submit" value="Add Event"></input>
         </form>
+        
     </div>
   )
 }
