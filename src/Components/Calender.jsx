@@ -1,3 +1,4 @@
+
 import FullCalendar from '@fullcalendar/react'
 import  {Calendar}  from '@fullcalendar/core';
 import adaptivePlugin from '@fullcalendar/adaptive';
@@ -46,16 +47,14 @@ function Calender() {
 
 
     return (
-        <div className="container mx-auto px-4">
-          <FullCalendar
-          plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
-          initialView="dayGridMonth"
-          events = {eventInfo}
-          eventContent = {eventInfo.title}
-          selectable = {true}
-          eventClick = {handleNavigateClick}
-        />
-      </div> 
+        <FullCalendar
+        plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+        initialView="dayGridMonth"
+        events = {eventInfo}
+        eventContent = {(event) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location}></Event>   }
+        selectable = {true}
+        eventClick = {handleNavigateClick}
+      /> 
          
     )
     

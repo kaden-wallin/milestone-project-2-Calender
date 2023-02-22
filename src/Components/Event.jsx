@@ -1,31 +1,47 @@
 import { useState, useEffect } from 'react'
-import {  useLocation } from 'react-router-dom'
+import {  useLocation, useParams } from 'react-router-dom'
 import GoBackBtn from './GoBackBtn'
 
 
 function Event(props) { // we're going to pass some sort of props in the future
+    
+   const [showButton, setShowButton] = useState(true)
 
-    const [showButton, setShowButton] = useState(true)
+   console.log(' props:', props)
+
+
     const path = useLocation()
 
-    const eventTitle = { event_title: 'event title'} //I'm assuming this will eventually be an object we use to get data from the DB
+    const { title } = useParams();
 
-    const { title, date } = props
+    // gets object based on the param name
+   // prevents btn from rendering in the calender
+     useEffect(() => {
+       if (path.pathname === '/calender') {
+         setShowButton(false);
+       }
+     }, [path.pathname])
 
-
-    useEffect(() => {
-        if (path.pathname === '/calender') {
-          setShowButton(false);
-        }
-      }, [path.pathname]);
-
-      // console.log(title)
+     // err message
+       if (!props) {
+        console.log('id:', title);
+          return <div>Page Not Found</div>
+       }
+     
   return (
     <div>
-        {showButton && <GoBackBtn />}
-        <div>
-            {props.title}
-        </div>
+         {showButton && <GoBackBtn />} 
+      <header>
+        {props.title}
+      </header>
+      <main>
+        <h2>
+        {props.location}
+        </h2>
+        <p>
+          {props.date}
+        </p>
+      </main>
     </div>
   )
 }

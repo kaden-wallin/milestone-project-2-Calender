@@ -1,7 +1,8 @@
-require('dotenv').config();
-
 import { createClient } from '@supabase/supabase-js'
 import GoBackBtn from '../GoBackBtn';
+
+require('dotenv').config();
+
 
 const supabaseUrl = process.env.DB_HOST
 const supabaseKey = process.env.DB_API_KEY
