@@ -18,7 +18,9 @@ function CreateEventPage() {
     }
 
     //MAKE THE API CALL
-    const { data, error } = await supabase
+
+    //data needs to be added back in below to the error bracket
+    const {  error } = await supabase
       .from('events')
       .insert(formData)
 
