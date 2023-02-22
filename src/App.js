@@ -9,8 +9,8 @@ import EventPage from './Components/Pages/EventPage';
 function App() {
 
   return (
-    <div >
-        <Routes className="bg-red-600">
+    <div className=" bg-red-600 min-h-screen">
+        <Routes>
           <Route path='/' element={<LandingPage />}/>  
           <Route path='/choose' element={<ChoosePage />}/>
           <Route path='/createevent' element={<CreateEventPage />}/>
