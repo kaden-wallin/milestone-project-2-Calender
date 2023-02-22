@@ -1,8 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 import GoBackBtn from '../GoBackBtn';
 
-const supabaseUrl = process.env.DB_HOST
-const supabaseKey = process.env.DB_API_KEY
+//require('dotenv').config()
+
+const supabaseUrl = "https://keztfhsconadyzpjouyc.supabase.co/"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRmaHNjb25hZHl6cGpvdXljIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYzNTE5NDUsImV4cCI6MTk5MTkyNzk0NX0.Klp0MeA68AP0nNonvKmn1wDh_RZL-HoMtexKYUSaEB8"
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
