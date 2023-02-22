@@ -6,15 +6,6 @@ import CalenderPage from './Components/Pages/CalenderPage';
 import EventPage from './Components/Pages/EventPage';
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:4002/backend")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
-
-  console.log(message)
 
   return (
     <div >
