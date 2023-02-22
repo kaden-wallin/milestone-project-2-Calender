@@ -1,50 +1,64 @@
-import FullCalendar from '@fullcalendar/react' // must go before plugins
- import  {Calendar}  from '@fullcalendar/core'; // also dont know what it does
-import adaptivePlugin from '@fullcalendar/adaptive'; // premium plugin
+import FullCalendar from '@fullcalendar/react'
+import  {Calendar}  from '@fullcalendar/core';
+import adaptivePlugin from '@fullcalendar/adaptive';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';// dont know what it does
 import timeGridPlugin from '@fullcalendar/timegrid'; // dont know what it does
+import Event from './Event';
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { identity } from '@fullcalendar/core/internal';
 
 function Calender() {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
+ 
+  const [eventInfo, setEventInfo] = useState([])
 
-    const handleClick = () => { 
-      navigate('/event')
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('http://localhost:4002/api/events');
+      const eventData = await response.json();
+      const newArr = eventData.map((evt) => {
+        const { event_ID: id, event_title: title, event_location: location, event_date: date } = evt;
+        return { id, title, location, date }
+      })
+      setEventInfo(newArr);
     }
 
+    fetchData();
+  }, []);
 
-    const events = [
-        {
-            title :  'event 1',
-            location: 'Paris, Texas', 
-            date: '2023-02-18'
-        }
-    ]
+  // const { id } = useParams()
+
+  const eventParam = (event) => {
+    return event.id;
+  }
+
+  // creates path for each item in the calender
+  const handleNavigateClick = (eventClickInfo) => {
+    const event = eventClickInfo.event;
+    const eventId = eventParam(event);
+    navigate(`/event/${eventId}`);
+  }
+
 
     return (
-        <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin ]}
-        initialView="dayGridMonth"
-        events = {events}
-        eventContent = {eventData}
-        selectable = {true}
-        eventClick = {handleClick}
-      /> 
+        <div className="container mx-auto px-4">
+          <FullCalendar
+          plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+          initialView="dayGridMonth"
+          events = {eventInfo}
+          eventContent = {eventInfo.title}
+          selectable = {true}
+          eventClick = {handleNavigateClick}
+        />
+      </div> 
          
     )
     
-  }
-
-  function eventData(eventInfo) {
-    return (
-        <div >
-            <b >{eventInfo.event.date}</b>
-            <i>{eventInfo.event.title}</i>
-        </div>
-    )
   }
   
   export default Calender
