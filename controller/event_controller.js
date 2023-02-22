@@ -9,17 +9,17 @@ events.get('/', async (req, res) => {
         const foundEvents = await Event.findAll()
         res.status(200).json(foundEvents)
     }
-    catch (error) {
+    catch (err) {
         res.status(500).send("Server error")
         console.log(err)
     }
 })
 
 //FIND A SPECIFIC EVENT
-events.get('/:title', async (req, res) => {
+events.get('/:id', async (req, res) => {
     try {
         const foundEvent = await Event.findOne({
-            where: { event_title: req.params.title }
+            where: { event_ID: req.params.id }
         })
         res.status(200).json(foundEvent)
     } 
