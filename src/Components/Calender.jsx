@@ -45,13 +45,12 @@ function Calender() {
     navigate(`/event/${eventId}`);
   }
 
-
     return (
         <FullCalendar
         plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
         initialView="dayGridMonth"
         events = {eventInfo}
-        eventContent = {(event) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location}></Event>   }
+        eventContent = {eventInfo.title}
         selectable = {true}
         eventClick = {handleNavigateClick}
       /> 

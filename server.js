@@ -2,10 +2,12 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const cors = require('cors')
 const { Sequelize } = require('sequelize')
 const port = process.env.PORT || 4002;
 
 // CONFIGURATION / MIDDLEWARE
+app.use(cors())
 require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -25,7 +27,11 @@ try {
     console.log(`Unable to connect to PG: ${err}`) 
 }
 
-
+//serverside static rendering
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+    console.log(path.join(__dirname, "public", "index.html"))
+   });
 
 // ROOT
 app.get('/backend', (req, res) => {
