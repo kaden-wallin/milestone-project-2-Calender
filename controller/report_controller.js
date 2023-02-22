@@ -15,10 +15,10 @@ reports.get('/', async (req, res) => {
 })
 
 //FIND A SPECIFIC REPORT
-reports.get('/:id', async (req, res) => {
+reports.get('/:title', async (req, res) => {
     try {
         const foundReport = await Report.findOne({
-            where: { reported_user_ID: req.params.id }
+            where: { report_title: req.params.title }
         })
         res.status(200).json(foundReport)
     } 

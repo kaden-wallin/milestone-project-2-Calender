@@ -3,13 +3,13 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('reported_users', {
-      reported_user_ID: {
+        report_user_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      reported_user_email: {
+      report_user_email: {
         type: Sequelize.STRING,
         allowNull: false,
       },

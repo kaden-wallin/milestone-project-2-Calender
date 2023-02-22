@@ -1,12 +1,12 @@
 //DEPENDENCIES
 const friends = require('express').Router()
 const db = require('../src/models')
-const { Friend } = db
+const { friend } = db
 
 //FIND ALL FRIENDS
 friends.get('/', async (req, res) => {
     try {
-        const foundFriends = await Friend.findAll()
+        const foundFriends = await friend.findAll()
         res.status(200).json(foundFriends)
     }
     catch (error) {
@@ -15,10 +15,10 @@ friends.get('/', async (req, res) => {
 })
 
 //FIND A SPECIFIC FRIEND
-friends.get('/:id', async (req, res) => {
+friends.get('/:title', async (req, res) => {
     try {
-        const foundFriend = await Friend.findOne({
-            where: { friend_ID: req.params.id }
+        const foundFriend = await friend.findOne({
+            where: { friend_title: req.params.title }
         })
         res.status(200).json(foundFriend)
     } 
@@ -30,7 +30,7 @@ friends.get('/:id', async (req, res) => {
 //ADD A FRIEND
 friends.post('/', async (req, res) => {
     try {
-        const newFriend = await Friend.create(req.body)
+        const newFriend = await friend.create(req.body)
         res.status(200).json({
             message: `Successfully befriended ${newFriend}`,
             data: newFriend
@@ -44,7 +44,7 @@ friends.post('/', async (req, res) => {
 //DELETE A FRIEND
 friends.delete('/:id', async (req, res) => {
     try {
-        const deletedFriends = await Friend.destroy({
+        const deletedFriends = await friend.destroy({
             where: {
                 friend_id: req.params.id
             }

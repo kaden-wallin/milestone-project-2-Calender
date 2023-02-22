@@ -7,13 +7,13 @@ import listPlugin from '@fullcalendar/list';// dont know what it does
 import timeGridPlugin from '@fullcalendar/timegrid'; // dont know what it does
 import Event from './Event';
 
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { identity } from '@fullcalendar/core/internal';
 
 function Calender() {
   const navigate = useNavigate()
- 
+
   const [eventInfo, setEventInfo] = useState([])
 
 
@@ -31,34 +31,29 @@ function Calender() {
     fetchData();
   }, []);
 
-  // const { id } = useParams()
 
-  const eventParam = (event) => {
-    return event.id;
-  }
+    const handleNavigateClick = () => { 
+      navigate('/event')
+    }
 
-  // creates path for each item in the calender
-  const handleNavigateClick = (eventClickInfo) => {
-    const event = eventClickInfo.event;
-    const eventId = eventParam(event);
-    navigate(`/event/${eventId}`);
-  }
 
 
     return (
         <div className="container mx-auto px-4">
           <FullCalendar
-          plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+          plugins={[ dayGridPlugin, interactionPlugin ]}
           initialView="dayGridMonth"
           events = {eventInfo}
-          eventContent = {eventInfo.title}
+          eventContent = {({ event }) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location} />}
           selectable = {true}
-          eventClick = {handleNavigateClick}
+          eventClick = {handleNavigateNavigateClick}
         />
       </div> 
          
     )
     
+  
   }
+  
   
   export default Calender
