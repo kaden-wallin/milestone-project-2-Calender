@@ -12,7 +12,7 @@ import {
 function ChooseCards(props) {
 
   return (
-    <div style={{'display': 'inline-flex'}}>
+    <div>
             <Link to = {props.path}>
                 <Card className="w-96">
                  <CardHeader color="red" className="relative h-56">
@@ -30,13 +30,6 @@ function ChooseCards(props) {
                      {props.description}
                    </Typography>
                  </CardBody>
-                 <CardFooter divider className="flex items-center justify-between py-3">
-                   <Typography variant="small">$899/night</Typography>
-                   <Typography variant="small" color="gray" className="flex gap-1">
-                     <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-                     Barcelona, Spain
-                   </Typography>
-                 </CardFooter>
                 </Card>
             </Link>
     </div>

@@ -21,7 +21,7 @@ function LandingPage() {
     
         </div>
         <Link to = '/choose' >
-            <button varientcolor = 'blue' className = '-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 t mt-64 bg-gray-300 text-9xl text-green-500' type = 'button'>Start</button>
+            <button className = '-m-2.5 inline-flex items-center justify-center rounded-full p-8 t mt-64 bg-white text-9xl text-red-600 hover:bg-red-600 hover:text-white' type = 'button'>Start</button>
         </Link>
     </div>
   )
