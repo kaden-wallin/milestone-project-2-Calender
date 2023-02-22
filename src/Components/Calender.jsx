@@ -8,11 +8,13 @@ import timeGridPlugin from '@fullcalendar/timegrid'; // dont know what it does
 import Event from './Event';
 
 import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { identity } from '@fullcalendar/core/internal';
 
 function Calender() {
   const navigate = useNavigate()
+ 
  
   const [eventInfo, setEventInfo] = useState([])
 
@@ -46,16 +48,14 @@ function Calender() {
 
 
     return (
-        <div className="container mx-auto px-4">
-          <FullCalendar
-          plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
-          initialView="dayGridMonth"
-          events = {eventInfo}
-          eventContent = {eventInfo.title}
-          selectable = {true}
-          eventClick = {handleNavigateClick}
-        />
-      </div> 
+        <FullCalendar
+        plugins={[ dayGridPlugin, interactionPlugin ]}
+        initialView="dayGridMonth"
+        events = {eventInfo}
+        eventContent = {({ event }) => <Event key={event.id} id={event.id} date={event.date} title={event.title} location={event.location} />}
+        selectable = {true}
+        eventClick = {handleNavigateClick}
+      /> 
          
     )
     
