@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false 
     },
     event_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     user_ID: {

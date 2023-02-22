@@ -9,7 +9,7 @@ events.get('/', async (req, res) => {
         const foundEvents = await Event.findAll()
         res.status(200).json(foundEvents)
     }
-    catch (error) {
+    catch (err) {
         res.status(500).send("Server error")
         console.log(err)
     }

@@ -27,7 +27,7 @@ try {
     console.log(`Unable to connect to PG: ${err}`) 
 }
 
-//serverside static rendering
+//SERVER STATIC RENDERING
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
     console.log(path.join(__dirname, "public", "index.html"))
