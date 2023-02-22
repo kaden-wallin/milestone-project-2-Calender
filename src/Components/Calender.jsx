@@ -44,7 +44,7 @@ function Calender() {
     const eventId = eventParam(event);
     navigate(`/event/${eventId}`);
   }
-
+      
 
     return (
         <FullCalendar
@@ -53,7 +53,7 @@ function Calender() {
         events = {eventInfo}
         eventContent = {eventInfo.title}
         selectable = {true}
-        eventClick = {handleClick}
+        eventClick = {handleNavigateClick}
       /> 
          
     )

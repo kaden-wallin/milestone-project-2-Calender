@@ -6,6 +6,7 @@ import CalenderPage from './Components/Pages/CalenderPage';
 import EventPage from './Components/Pages/EventPage';
 import { Component } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query';
 
 const queryClient = new QueryClient({
   defaultOptions: {
