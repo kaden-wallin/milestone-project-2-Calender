@@ -45,18 +45,15 @@ function Calender() {
     navigate(`/event/${eventId}`);
   }
 
-
     return (
-        <div className="container mx-auto px-4">
-          <FullCalendar
-          plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
-          initialView="dayGridMonth"
-          events = {eventInfo}
-          eventContent = {eventInfo.title}
-          selectable = {true}
-          eventClick = {handleNavigateClick}
-        />
-      </div> 
+        <FullCalendar
+        plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+        initialView="dayGridMonth"
+        events = {eventInfo}
+        eventContent = {eventInfo.title}
+        selectable = {true}
+        eventClick = {handleNavigateClick}
+      /> 
          
     )
     
