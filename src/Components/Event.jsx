@@ -7,9 +7,6 @@ function Event(props) { // we're going to pass some sort of props in the future
     
    const [showButton, setShowButton] = useState(true)
 
-   console.log(' props:', props)
-
-
     const path = useLocation()
 
     const { title } = useParams();

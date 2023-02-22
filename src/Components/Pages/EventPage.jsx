@@ -4,12 +4,7 @@ import Event from '../Event';
 import { useParams } from 'react-router-dom';
 
 function EventPage() {
-    const [eventInfo, setEventInfo] = useState({
-        // event_ID: 0,
-        // event_title: '',
-        // event_location: '',
-        // event_date: ''
-    })
+    const [eventInfo, setEventInfo] = useState({})
 
     const { id } = useParams();
 
@@ -25,10 +20,15 @@ function EventPage() {
       fetchData();
     }, [id]);
 
-
   return (
     <div>
-        <Event key={id} id={eventInfo.event_ID} date={eventInfo.event_date} title={eventInfo.event_title} location={eventInfo.event_location}></Event>   
+        <Event 
+        key={id} 
+        id={eventInfo.event_ID} 
+        date={eventInfo.event_date} 
+        title={eventInfo.event_title} 
+        location={eventInfo.event_location} 
+        />   
     </div>
   )
 }
