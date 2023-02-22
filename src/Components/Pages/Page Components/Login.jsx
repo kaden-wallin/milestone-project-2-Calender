@@ -16,11 +16,11 @@ export const Login = (props) => {
 
         return (
             <>
-                <form onSubmit={handleSubmit}>
+                <form method= "GET" action= '/' onSubmit={handleSubmit}>
                     <label for='user_email'> Email </label>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type= 'email' placeholder="youremail@email.com" id="user_email" name="email"/>
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type= 'email' placeholder="youremail@email.com" id="user_email" required/>
                     <label for='user_password'> Password </label>
-                    <input value={pass} onChange={(e) => setPass(e.target.value)} type= 'password' placeholder="****" id="user_password" name="password"/>
+                    <input value={pass} onChange={(e) => setPass(e.target.value)} type= 'password' placeholder="****" id="user_password" required/>
                     <button> Log In </button>
                   </form>
                   <button onClick={() => props.onFormSwitch('register')}> Don't have an account? Register here. </button>

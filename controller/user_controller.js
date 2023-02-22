@@ -4,11 +4,16 @@ const db = require('../src/models')
 const { User } = db
 
 //CREATE AN ACCOUNT
-users.post('/login', async (req, res) => {
+users.post('/register', async (req, res) => {
     try {
-        let username = req.body.username;
+        let email = req.body.email;
         let password = req.body.password
-        res.send (`Username: ${user_email} Password: ${user_password}`)
+        if (req.body.email === '') { req.body.email = undefined}
+        if (req.body.password === '') { req.body.password = undefined}
+        db.User.create(req.body)
+            .then(() =>{
+                res.redirect('/calender')
+            })
         res.status(200).json({
             message: 'Successfully registered',
             data: newAccount
@@ -20,11 +25,6 @@ users.post('/login', async (req, res) => {
 })
 
 //CHECK AN ACCOUNT 
-
-users.get('/email/:id', (req,res) => {
-    let verify = getUserEmail(req.params.id);
-    res.send(verify);
-})
 
 //UPDATE ACCOUNT
 users.put('/:id', async (req, res) => {

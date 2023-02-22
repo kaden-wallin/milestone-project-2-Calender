@@ -10,8 +10,9 @@ const port = process.env.PORT || 4002;
 require('dotenv').config()
 app.use(cors());
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "public")));
+
 
 // SEQUELIZE CONNECTION
 const sequelize = new Sequelize({
@@ -34,6 +35,15 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
     console.log(path.join(__dirname, "public", "index.html"))
    });
+
+
+
+app.post('/users/register', (req , res) => {
+    const email = req.body.email
+    const password = req.body.password
+
+    res.send("Data Recieved")
+})
 
 // ROOT
 app.get('/backend', (req, res) => {
