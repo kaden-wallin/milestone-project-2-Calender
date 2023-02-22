@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { useNavigate } from 'react-router-dom'
 import GoBackBtn from '../GoBackBtn';
+import React, { useState } from 'react';
 
 const supabaseUrl = "https://keztfhsconadyzpjouyc.supabase.co"
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRmaHNjb25hZHl6cGpvdXljIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYzNTE5NDUsImV4cCI6MTk5MTkyNzk0NX0.Klp0MeA68AP0nNonvKmn1wDh_RZL-HoMtexKYUSaEB8"
@@ -9,6 +10,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 function CreateEventPage() {
   const navigate = useNavigate()
+  const [message, setMessage] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -27,10 +29,10 @@ function CreateEventPage() {
       .insert(formData)
 
     if (error) {
-      alert('Failed to add event')
+      setMessage('There was an error creating the item.');
       console.error(error.message)
     } else {
-      alert('Event added successfully!')
+      setMessage('Item created successfully!');
 
     // REDIRECTS TO THE CALENDAR PAGE
       navigate('/calender') 
@@ -51,6 +53,7 @@ function CreateEventPage() {
         <input id="location" type="text" />
         <input type="submit" value="Add Event" />
       </form>
+      {message && <p>{message}</p>}
     </div>
   )
 }
