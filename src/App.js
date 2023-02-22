@@ -4,11 +4,14 @@ import ChoosePage from './Components/Pages/ChoosePage';
 import CreateEventPage from './Components/Pages/CreateEventPage';
 import CalenderPage from './Components/Pages/CalenderPage';
 import EventPage from './Components/Pages/EventPage';
+import { useState } from 'react';
+
 
 
 function App() {
 
   return (
+  
     <div >
         <Routes className="bg-red-600">
           <Route path='/' element={<LandingPage />}/>  
@@ -18,6 +21,7 @@ function App() {
           <Route path='/event/:id' element={<EventPage />}/>
         </Routes>  
     </div>
+    
   );
 }
 
