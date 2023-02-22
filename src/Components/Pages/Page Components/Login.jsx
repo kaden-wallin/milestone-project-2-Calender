@@ -1,11 +1,11 @@
 import { React } from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
 export const Login = (props) => {
     const [email, setEmail ] = useState('')
     const [password, setPassword ] = useState('')
-    const [logInfo, setLogInfo ] = useState([])
+   // const [logInfo, setLogInfo ] = useState([])
 
     async function handleSubmit (e) {
         e.preventDefault()

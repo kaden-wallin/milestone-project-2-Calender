@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { Login } from './Page Components/Login'
+import { Register } from './Page Components/Register'
 
 function LandingPage() {
   return (
