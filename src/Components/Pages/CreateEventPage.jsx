@@ -45,6 +45,7 @@ function CreateEventPage() {
         <input id="location" type="text" />
         <input type="submit" value="Add Event" />
       </form>
+
     </div>
   )
 }
