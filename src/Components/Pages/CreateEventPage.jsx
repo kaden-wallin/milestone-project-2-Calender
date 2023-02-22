@@ -34,7 +34,7 @@ function CreateEventPage() {
   }
 
   return (
-    <div className= 'items-center justify-center rounded-md text-center t bg-red-400 text-2xl'>
+    <div className=' text-center  m-auto w-auto items-center  justify-between font-bold '>
       <GoBackBtn />
       <form onSubmit={handleSubmit} className= 'items-center justify-center rounded-md text-center t bg-gray-50 text-2xl'>
         <label htmlFor="event-title">Event Title: </label>
