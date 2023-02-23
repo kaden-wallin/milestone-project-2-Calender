@@ -4,6 +4,8 @@ import ChoosePage from './Components/Pages/ChoosePage';
 import CreateEventPage from './Components/Pages/CreateEventPage';
 import CalenderPage from './Components/Pages/CalenderPage';
 import EventPage from './Components/Pages/EventPage';
+import { useState } from 'react';
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
           <Route path='/event/:id' element={<EventPage />}/>
         </Routes>  
     </div>
+    
   );
 }
 

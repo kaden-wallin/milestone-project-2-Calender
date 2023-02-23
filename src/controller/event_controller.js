@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const events = require('express').Router()
-const db = require('../src/models')
+const db = require('../models')
 const { Event } = db
 
 //FIND ALL EVENTS
