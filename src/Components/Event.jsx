@@ -30,5 +30,4 @@ function Event(props) { // we're going to pass some sort of props in the future
     </div>
   )
 }
-
 export default Event
