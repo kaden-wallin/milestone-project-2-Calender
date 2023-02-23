@@ -30,7 +30,7 @@ function EventPage() {
         title={eventInfo.event_title} 
         location={eventInfo.event_location} 
         />
-        <DeleteButton key={id} />   
+        <DeleteButton key={id} /> 
     </div>
   )
 }
