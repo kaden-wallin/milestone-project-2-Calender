@@ -37,7 +37,7 @@ export const Register = (props) => {
             setMessage('Account created successfully, have fun!');
         
         // REDIRECTS TO THE CAlENDAR PAGE
-        navigate('/calender') 
+        navigate('/choose') 
         } 
     } 
 
