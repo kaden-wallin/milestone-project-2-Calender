@@ -30,7 +30,8 @@ function EventPage() {
         title={eventInfo.event_title} 
         location={eventInfo.event_location} 
         />
-        <DeleteButton key={id} /> 
+        console.log("eventId:", id);
+        <DeleteButton eventId={ id } /> 
     </div>
   )
 }
