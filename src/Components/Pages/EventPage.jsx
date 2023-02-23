@@ -7,14 +7,12 @@ import GoBackBtn from '../GoBackBtn';
 function EventPage() {
     const [eventInfo, setEventInfo] = useState({})
 
-    const { id } = useParams();
+    const { id } = useParams(); // grabs id from the url 
 
     useEffect(() => {
       async function fetchData() {
         const response = await fetch(`http://localhost:4002/api/events/${id}`);
-        const eventData = await response.json();
-        // const { event_ID: id, event_title: title, event_location: location, event_date: date } = eventData;
-        // return { id, title, location, date }        
+        const eventData = await response.json();    
         setEventInfo(eventData);
       }
   
