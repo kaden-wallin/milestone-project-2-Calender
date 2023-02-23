@@ -1,9 +1,5 @@
 import FullCalendar from '@fullcalendar/react'
-import adaptivePlugin from '@fullcalendar/adaptive';
-import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import listPlugin from '@fullcalendar/list';
-import timeGridPlugin from '@fullcalendar/timegrid'; 
 import { useNavigate} from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
@@ -41,18 +37,16 @@ function Calender() {
 
     return (
         <FullCalendar
-        plugins = {[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+        plugins = {[ dayGridPlugin ]}
         initialView = "dayGridMonth"
         events = {eventInfo}
         eventContent = {eventInfo.title}
         selectable = {true}
         eventClick = {handleNavigateClick}
         eventColor = {'red'}
-        themeSystem = {'simplex'}
       /> 
          
     )
-    
   }
   
   export default Calender
