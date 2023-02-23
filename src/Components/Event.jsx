@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import {  useLocation, useParams } from 'react-router-dom'
-import { Button } from '@material-tailwind/react';
 
 
 function Event(props) { // we're going to pass some sort of props in the future

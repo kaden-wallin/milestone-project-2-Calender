@@ -10,6 +10,8 @@ export const Register = (props) => {
 
     async function handleSubmit (e) {
         e.preventDefault()
+        console.log(email)
+        console.log(password)
     } 
 
     return (
@@ -28,7 +30,7 @@ export const Register = (props) => {
             py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" value={password} onChange={(e) => setLogInfo({ ...logInfo, password: e.target.value})} type= 'password' placeholder="****" id="user_password" required/>
             </div>
             <div>
-                <button class= "appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"> Create Account </button>
+                <button class= "appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick={handleSubmit} type='submit'> Create Account </button>
             </div>
         </div>
         </form>
