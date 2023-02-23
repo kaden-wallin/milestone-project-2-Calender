@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
@@ -8,37 +8,45 @@ import { createClient } from '@supabase/supabase-js';
     const supabase = createClient(supabaseUrl, supabaseKey)
 
 
-  export default async function UpdateEvent(event) {
+   function UpdateEvent() {
+
     const navigate = useNavigate()
     const [message, setMessage] = useState('');
 
-    const formData = {
-        user_ID: document.getElementById('user-id').value,
-        event_title: document.getElementById('event-title').value,
-        event_date: document.getElementById('choose-date').value,
-        event_location: document.getElementById('location').value,
-      }
+    const { id } = useParams()
 
-      const { data, error } = await supabase
-      .from('events')
-      .insert(formData)
 
-      if (error) {
-        setMessage('There was an error editing the item.');
-        console.error(error.message)
-      } else {
-        setMessage('Item edited successfully!');
+    async function handleSubmit(event) {
+      event.preventDefault()
+
+      const formData = {
+          user_ID: document.getElementById('user-id').value,
+          event_title: document.getElementById('event-title').value,
+          event_date: document.getElementById('choose-date').value,
+          event_location: document.getElementById('location').value,
+        }
   
-      // REDIRECTS TO THE CALENDAR PAGE
-        navigate('/calender') 
-      }
+        const { data, error } = await supabase
+        .from('events')
+        .insert(formData)
+  
+        if (error) {
+          setMessage('There was an error editing the item.');
+          console.error(error.message)
+        } else {
+          setMessage('Item edited successfully!');
+    
+        // REDIRECTS TO THE CALENDAR PAGE
+          navigate('/calender') 
+        }
+    }
     
 
     return (
     <div className=' text-center  m-auto w-auto items-center  justify-between font-bold bg-red-500'>
       <div class='container flex flex-wrap justify-center items-center m-auto w-auto'>
         <h1> Edit Event </h1>
-      <form method='POST' action={`http://localhost:4002/event/${data.event.id}?_method=PUT`} class= 'w-full max-w-lg'>
+      <form method='POST' action={`http://localhost:4002/api/events/${id}?_method=PUT`} class= 'w-full max-w-lg'>
       <div class='flex flex-wrap justify-center items-center -mx-3 mb-6 '>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label class="block tracking-wide text-black-200 text-xl font-bold mb-2"  htmlFor="user-id">User ID: </label>
@@ -67,4 +75,6 @@ import { createClient } from '@supabase/supabase-js';
       </div>
     )
 }
+
+export default UpdateEvent
 
