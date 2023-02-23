@@ -1,17 +1,12 @@
-
 import FullCalendar from '@fullcalendar/react'
-// import  {Calendar}  from '@fullcalendar/core';
 import adaptivePlugin from '@fullcalendar/adaptive';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import listPlugin from '@fullcalendar/list';// dont know what it does
-import timeGridPlugin from '@fullcalendar/timegrid'; // dont know what it does
-// import Event from './Event';
-
-//useParams needs to be added back to the useNav below
+import listPlugin from '@fullcalendar/list';
+import timeGridPlugin from '@fullcalendar/timegrid'; 
 import { useNavigate} from 'react-router-dom'
 import { useState, useEffect } from 'react';
-// import { identity } from '@fullcalendar/core/internal';
+
 
 function Calender() {
   const navigate = useNavigate()
@@ -33,8 +28,6 @@ function Calender() {
     fetchData();
   }, []);
 
-  // const { id } = useParams()
-
   const eventParam = (event) => {
     return event.id;
   }
@@ -48,12 +41,14 @@ function Calender() {
 
     return (
         <FullCalendar
-        plugins={[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
-        initialView="dayGridMonth"
+        plugins = {[ dayGridPlugin, interactionPlugin, adaptivePlugin, listPlugin, timeGridPlugin, ]}
+        initialView = "dayGridMonth"
         events = {eventInfo}
         eventContent = {eventInfo.title}
         selectable = {true}
         eventClick = {handleNavigateClick}
+        eventColor = {'red'}
+        themeSystem = {'simplex'}
       /> 
          
     )

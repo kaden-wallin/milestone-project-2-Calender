@@ -4,7 +4,6 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Typography,
 } from "@material-tailwind/react";
 
@@ -17,7 +16,7 @@ function ChooseCards(props) {
                 <Card className="w-96">
                  <CardHeader color="red" className="relative h-56">
                    <img
-                     src="/img/blog.jpg"
+                     src={props.image}
                      alt="img-blur-shadow"
                      className="h-full w-full"
                    />

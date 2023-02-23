@@ -6,7 +6,7 @@ import Calender from '../Calender'
 function CalenderPage() {
 
   return (
-    <div className=' bg-red-400' >
+    <div >
       <div >
         <GoBackBtn />
       </div>
