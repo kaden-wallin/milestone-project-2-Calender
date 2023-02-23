@@ -1,14 +1,14 @@
 import { react } from 'react'
 
-    const setData = (data) =>{
-        let { id, date, title, location } = data
-        events.setItem('{eventInfo.event_ID}', id)
-        events.setItem('{eventInfo.event_date}', date)
-        events.setItem('{eventInfo.event_title}', title)
-        events.setItem('{eventInfo.event_location}', location)
+  //  const setData = (data) =>{
+      //  let { id, date, title, location } = data
+      //  events.setItem('{eventInfo.event_ID}', id)
+     //   events.setItem('{eventInfo.event_date}', date)
+     //   events.setItem('{eventInfo.event_title}', title)
+     //   events.setItem('{eventInfo.event_location}', location)
         
-    }
-    function update_event(data) {
+  //  }
+  export default function UpdateEvent(data) {
 
 
     return (
