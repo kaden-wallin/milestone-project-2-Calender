@@ -3,8 +3,8 @@ import ChooseCards from '../ChooseCards'
 
 function ChoosePage() {
   return (
-    <div className="flex flex-row space-x-9 justify-center items-center container mx-auto px-4 bg-red-600" >
-      <div className='flex justify-center items-center my-20 border-slate-50 pt-5 '>
+    <div className="flex flex-col sm:flex-row space-x-1 sm:space-x-9 justify-center items-center container mx-auto px- bg-red-600" >
+      <div className='flex justify-center items-center my-10 sm:my-20 border-slate-50 pt-5 mx-20'>
           <ChooseCards 
               path = '/createevent'
               text = ' Create Event'
@@ -12,7 +12,7 @@ function ChoosePage() {
               image = '../images/formImage.png'
           />
         </div>
-        <div className='flex justify-center items-center my-20 border-slate-50 pt-5'>
+        <div className='flex justify-center items-center my-20 border-slate-50 pt-5 mx-20'>
           <ChooseCards 
               path = '/calender'
               text = 'Calender'
