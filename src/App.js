@@ -19,7 +19,7 @@ function App() {
           <Route path='/createevent' element={<CreateEventPage />}/>
           <Route path = '/calender'   element={<CalenderPage />}/>
           <Route path='/event/:id' element={<EventPage />}/>
-          <Route path='/update' element={<UpdateEvent />}/>
+          <Route path='/update/:id' element={<UpdateEvent />}/>
         </Routes>  
     </div>
     
