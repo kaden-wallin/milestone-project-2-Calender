@@ -23,7 +23,7 @@ function DeleteButton({ eventId }) {
 
   return (
     <div>
-      <Button id="deleteButton" onClick={handleDelete}>
+      <Button className="bg-white text-red-600 rounded-full p-5 px-11 hover:bg-red-500 hover:text-white" id="deleteButton" onClick={handleDelete}>
         Delete
       </Button>
       {message && <p>{message}</p>}
