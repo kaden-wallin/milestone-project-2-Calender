@@ -11,6 +11,7 @@ import { createClient } from '@supabase/supabase-js';
    function UpdateEvent(props) {
     const [message, setMessage] = useState('');
     const updatedEventPage = useNavigate()
+
     const { id } = useParams()
 
 
@@ -37,8 +38,8 @@ import { createClient } from '@supabase/supabase-js';
           setMessage('Item edited successfully!');
     
         // REDIRECTS TO THE EVENT PAGE
-          updatedEventPage(`/event/${id}`)
-        }
+        updatedEventPage(`/event/${id}`)
+      }
     }
     
 
