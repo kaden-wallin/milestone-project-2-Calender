@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import GoBackBtn from './GoBackBtn'
-import events from '../../controller/event_controller'
+import events from '../controller/event_controller'
 
 function Event(props) {
   const [showButton, setShowButton] = useState(true)

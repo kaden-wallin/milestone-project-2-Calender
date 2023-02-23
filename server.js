@@ -41,16 +41,16 @@ app.get('/backend', (req, res) => {
 })
 
 //CONTROLLERS
-const eventsController = require('./controller/event_controller')
+const eventsController = require('./src/controller/event_controller')
 app.use('/api/events', eventsController)
 
-const friendsController = require('./controller/friend_controller')
+const friendsController = require('./src/controller/friend_controller')
 app.use('/api/friends', friendsController)
 
-const usersController = require('./controller/user_controller')
+const usersController = require('./src/controller/user_controller')
 app.use('/api/users', usersController)
 
-const reportsController = require('./controller/report_controller')
+const reportsController = require('./src/controller/report_controller')
 app.use('/api/reports', reportsController)
 
 // LISTEN
