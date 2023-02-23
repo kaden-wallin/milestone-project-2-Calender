@@ -9,8 +9,8 @@ function GoBackBtn() {
     }
 
   return (
-    <div className=''>
-      <Button variant='text' onClick = {handleClick}>Return</Button>
+    <div className='text-slate-100'>
+      <Button variant='text' onClick = {handleClick}>{'<'}Back</Button>
     </div>
   )
 }

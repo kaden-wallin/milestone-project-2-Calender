@@ -27,8 +27,8 @@ function Event(props) { // we're going to pass some sort of props in the future
      
   return (
     <div className="flex justify-center">
-    <div className="bg-white rounded-lg shadow-md p-[200px] ">
-      <header className="text-xl font-bold mb-4">
+    <div className="bg-white rounded-lg shadow-md p-[150px] ">
+      <header className="text-2xl font-bold mb-4">
         {props.title}
       </header>
       <main>
