@@ -63,7 +63,7 @@ events.delete('/:id', async (req, res) => {
     try {
         const deletedEvents = await Event.destroy({
             where: {
-                event_id: req.params.id
+                event_ID: req.params.id
             }
         })
         res.status(200).json({
