@@ -6,6 +6,7 @@ import CalenderPage from './Components/Pages/CalenderPage';
 import EventPage from './Components/Pages/EventPage';
 import UpdateEvent  from './Components/Pages/Page Components/UpdateEvent'
 import { useState } from 'react';
+import UpdatePage from './Components/Pages/Page Components/UpdatePage';
 
 
 
@@ -19,7 +20,7 @@ function App() {
           <Route path='/createevent' element={<CreateEventPage />}/>
           <Route path = '/calender'   element={<CalenderPage />}/>
           <Route path='/event/:id' element={<EventPage />}/>
-          <Route path='/update/:id' element={<UpdateEvent />}/>
+          <Route path='/update/:id' element={<UpdatePage />}/>
         </Routes>  
     </div>
     

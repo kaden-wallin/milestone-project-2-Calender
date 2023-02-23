@@ -45,13 +45,13 @@ events.post('/', async (req, res) => {
 //UPDATE AN EVENT
 events.put('/:id', async (req, res) => {
     try {
-        const updatedEvents = await Event.update(req.body, {
+        const updateEvent = await Event.update(req.body, {
             where: {
                 event_ID: req.params.id
             }
         })
         res.status(200).json({
-            message: `Successfully updated ${updatedEvents} event(s)`
+            message: `Successfully updated ${updateEvent} event(s)`
         })
     } catch(err) {
         res.status(500).json(err)
