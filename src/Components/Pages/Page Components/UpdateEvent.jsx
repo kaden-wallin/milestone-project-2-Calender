@@ -50,7 +50,7 @@ import { createClient } from '@supabase/supabase-js';
       <div class='flex flex-wrap justify-center items-center -mx-3 mb-6 '>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label class="block tracking-wide text-black-200 text-xl font-bold mb-2"  htmlFor="user-id">User ID: </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-200 border border-rose-900 rounded 
+          <input class="appearance-none block w-full bg-gray-200 text-black-200 border border-rose-900 rounded 
             py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="user-id" type="number" />
           </div>
           <div class="w-full md:w-1/2 px-3">
