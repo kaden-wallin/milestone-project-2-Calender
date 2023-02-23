@@ -52,20 +52,20 @@ import { createClient } from '@supabase/supabase-js';
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label class="block tracking-wide text-black-200 text-xl font-bold mb-2"  htmlFor="user-id">User ID: </label>
           <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded 
-            py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="user-id" type="number" />
+            py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="user-id" type="number" placeholder={props.user_id} />
           </div>
           <div class="w-full md:w-1/2 px-3">
             <label class= "block tracking-wide text-black-700 text-xl font-bold mb-2" htmlFor="event-title">Event Title: </label>
             <input class= "appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-           id="event-title" type="text" />
+           id="event-title" type="text" placeholder={props.title}/>
           </div>
           <div class= 'w-full md:w-1/3 px-3 mb-6 md:mb-0'>
             <label class= 'block tracking-wide text-black-700 text-xl font-bold mb-2' htmlFor="choose-date">Date: </label>
-            <input class= 'appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' id="choose-date" type="date" />
+            <input class= 'appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' id="choose-date" type="date" placeholder={props.date}/>
           </div>
           <div class= 'flex flex-wrap -mx-3 mb-2'>
             <label class= 'block tracking-wide text-black-700 text-xl font-bold mb-2' htmlFor="location">Event Location: </label>
-            <input class= 'appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' id="location" type="text" />
+            <input class= 'appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' id="location" type="text" placeholder={props.location}/>
           </div>
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
           <input class="appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="submit" value="Update Event" />
