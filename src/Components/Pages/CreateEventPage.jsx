@@ -29,10 +29,10 @@ function CreateEventPage() {
       .insert(formData)
 
     if (error) {
-      setMessage('There was an error creating the item.');
+      setMessage('There was an error creating the event.');
       console.error(error.message)
     } else {
-      setMessage('Item created successfully!');
+      setMessage("I'll add that to the calendar!");
 
     // REDIRECTS TO THE CALENDAR PAGE
       navigate('/calender') 
