@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const reports = require('express').Router()
-const db = require('../src/models')
+const db = require('../models')
 const { Report } = db
 
 //FIND ALL REPORTS

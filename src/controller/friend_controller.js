@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const friends = require('express').Router()
-const db = require('../src/models')
+const db = require('../models')
 const { Friend } = db
 
 //FIND ALL FRIENDS

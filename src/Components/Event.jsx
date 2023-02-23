@@ -1,12 +1,23 @@
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import {  useLocation, useParams } from 'react-router-dom'
 import GoBackBtn from './GoBackBtn'
-import events from '../controller/event_controller'
 
-function Event(props) {
-  const [showButton, setShowButton] = useState(true)
-  const path = useLocation()
-  const navigate = useNavigate()
+
+function Event(props) { // we're going to pass some sort of props in the future
+    
+   const [showButton, setShowButton] = useState(true)
+
+    const path = useLocation()
+
+    const { title } = useParams();
+
+    // gets object based on the param name
+   // prevents btn from rendering in the calender
+     useEffect(() => {
+       if (path.pathname === '/calender') {
+         setShowButton(false);
+       }
+     }, [path.pathname])
 
      // err message
        if (!props) {
@@ -15,21 +26,19 @@ function Event(props) {
        }
      
   return (
-    <div className="flex justify-center">
-    <div className="bg-white rounded-lg shadow-md p-[200px] ">
-      <header className="text-xl font-bold mb-4">
+    <div>
+         {showButton && <GoBackBtn />} 
+      <header>
         {props.title}
       </header>
       <main>
-        <h2 className="text-lg font-bold mb-2">
+        <h2>
         {props.location}
         </h2>
         <p className="text-gray-600">
           {props.date}
         </p>
-        <button onClick={handleDelete}>Delete</button>
       </main>
-    </div>
     </div>
   )
 }
