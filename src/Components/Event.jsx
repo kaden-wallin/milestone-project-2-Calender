@@ -19,7 +19,7 @@ function Event(props) {
     events.delete('/:id', async (req, res) => {
       try {
           const deletedEvents = await Event.destroy({
-              where: {
+             where: {
                   event_id: req.params.id
               }
           })
@@ -29,7 +29,7 @@ function Event(props) {
       } catch(err) {
           res.status(500).json(err)
       }
-  })
+        })
     // assuming the API call returns success, redirect to home page
     navigate('/calender')
   }
