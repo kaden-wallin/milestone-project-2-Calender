@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { Button } from "@material-tailwind/react";
+import { useNavigate } from 'react-router-dom'
 
 function DeleteButton({ eventId }) {
   const [message, setMessage] = useState("");
+  const navigate = useNavigate()
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`/event/${eventId}`, {
+      const response = await fetch(`http://localhost:4002/api/events/${eventId}`, {
         method: "DELETE",
       });
       const data = await response.json();
       setMessage(data.message);
+
+      // REDIRECTS TO THE CALENDAR PAGE
+      navigate('/calender')
     } catch (err) {
       console.error(err.message);
     }
