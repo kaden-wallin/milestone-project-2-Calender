@@ -1,4 +1,4 @@
-
+import { react } from 'react'
 
     const setData = (data) =>{
         let { id, date, title, location } = data
@@ -8,11 +8,14 @@
         events.setItem('{eventInfo.event_location}', location)
         
     }
+    function update_event(data) {
+
 
     return (
     <div className=' text-center  m-auto w-auto items-center  justify-between font-bold bg-red-500'>
       <div class='container flex flex-wrap justify-center items-center m-auto w-auto'>
-      <form onSubmit={handleSubmit} class= 'w-full max-w-lg'>
+        <h1> Edit Event </h1>
+      <form method='POST' action={`/event/${data.event.id}?_method=PUT`} class= 'w-full max-w-lg'>
       <div class='flex flex-wrap justify-center items-center -mx-3 mb-6 '>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label class="block tracking-wide text-black-200 text-xl font-bold mb-2"  htmlFor="user-id">User ID: </label>
@@ -40,3 +43,4 @@
       </div>
       </div>
     )
+}
