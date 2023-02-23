@@ -17,8 +17,7 @@ function App() {
           <Route path='/choose' element={<ChoosePage />}/>
           <Route path='/createevent' element={<CreateEventPage />}/>
           <Route path = '/calender'   element={<CalenderPage />}/>
-          <Route path='/event/:id' element={<EventPage />}/>
-        </Routes>  
+          <Route path='/event/:id' element={<EventPage />}/>        </Routes>  
     </div>
     
   );

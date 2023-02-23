@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Event from '../Event';
 import { useParams } from 'react-router-dom';
 import GoBackBtn from '../GoBackBtn';
+import DeleteButton from '../DeleteBtn';
 
 function EventPage() {
     const [eventInfo, setEventInfo] = useState({})
@@ -28,7 +29,8 @@ function EventPage() {
         date={eventInfo.event_date} 
         title={eventInfo.event_title} 
         location={eventInfo.event_location} 
-        />   
+        />
+        <DeleteButton key={id} />   
     </div>
   )
 }

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import {  useLocation, useParams } from 'react-router-dom'
-import deleteButton from './DeleteBtn';
+import { Button } from '@material-tailwind/react';
+
 
 function Event(props) { // we're going to pass some sort of props in the future
-    
+
    const [showButton, setShowButton] = useState(true)
 
      // err message
@@ -11,7 +12,7 @@ function Event(props) { // we're going to pass some sort of props in the future
         console.log('id:');
           return <div>Page Not Found</div>
        }
-     
+
   return (
     <div className="flex justify-center">
     <div className="bg-white rounded-lg shadow-md p-[150px] ">
@@ -25,11 +26,9 @@ function Event(props) { // we're going to pass some sort of props in the future
          <p className="text-gray-600">
           {props.date}
         </p>
-        <button id={deleteButton} data-id={props.event_ID}>Delete</button>
       </main>
     </div>
     </div>
   )
 }
-
 export default Event
