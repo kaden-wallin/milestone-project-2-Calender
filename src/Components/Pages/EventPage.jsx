@@ -3,6 +3,8 @@ import Event from '../Event';
 import { useParams, Link } from 'react-router-dom';
 import GoBackBtn from '../GoBackBtn';
 import DeleteButton from '../DeleteBtn';
+import { Button } from "@material-tailwind/react";
+
 
 function EventPage() {
     const [eventInfo, setEventInfo] = useState({})
@@ -29,11 +31,13 @@ function EventPage() {
         title={eventInfo.event_title} 
         location={eventInfo.event_location} 
         />
-        <Link to= {`/update/${id}`}>
-          <button> Update </button>
-        </Link>
+        <div className='flex flex-row justify-center my-5 space-x-4'>
+          <Link to= {`/update/${id}`}>
+            <Button className='bg-white text-black rounded-full p-5 px-11 hover:bg-blue-500 hover:text-white'> Update </Button>
+          </Link>
 
-        <DeleteButton eventId={id} /> 
+          <DeleteButton eventId={id} /> 
+        </div>
     </div>
   )
 }

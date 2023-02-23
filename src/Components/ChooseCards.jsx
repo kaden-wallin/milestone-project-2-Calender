@@ -13,7 +13,7 @@ function ChooseCards(props) {
   return (
     <div>
             <Link to = {props.path}>
-                <Card className="w-96">
+                <Card className="w-96 hover:transform hover:scale-105 transition duration-300">
                  <CardHeader color="red" className="relative h-56">
                    <img
                      src={props.image}

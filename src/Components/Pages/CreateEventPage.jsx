@@ -65,7 +65,7 @@ function CreateEventPage() {
             <input class= 'appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white' id="location" type="text" />
           </div>
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <input class="appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="submit" value="Add Event" />
+          <input class="appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 hover:bg-blue-500 hover:text-white"  type="submit" value="Add Event" />
           </div>
       </div>
       </form>
