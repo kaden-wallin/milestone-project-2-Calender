@@ -26,19 +26,20 @@ function Event(props) { // we're going to pass some sort of props in the future
        }
      
   return (
-    <div>
-         {showButton && <GoBackBtn />} 
-      <header>
+    <div className="flex justify-center">
+    <div className="bg-white rounded-lg shadow-md p-[200px] ">
+      <header className="text-xl font-bold mb-4">
         {props.title}
       </header>
       <main>
-        <h2>
+        <h2 className="text-lg font-bold mb-2">
         {props.location}
         </h2>
-        <p className="text-gray-600">
+         <p className="text-gray-600">
           {props.date}
         </p>
       </main>
+    </div>
     </div>
   )
 }
