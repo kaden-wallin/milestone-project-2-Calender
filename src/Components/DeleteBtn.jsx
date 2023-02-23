@@ -18,7 +18,7 @@ function DeleteButton({ eventId }) {
 
   return (
     <div>
-      <Button id="deleteButton" variant="red" onClick={handleDelete}>
+      <Button id="deleteButton" onClick={handleDelete}>
         Delete
       </Button>
       {message && <p>{message}</p>}

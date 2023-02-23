@@ -20,6 +20,8 @@ function EventPage() {
       fetchData();
     }, [id]);
 
+    console.log("eventId:", id);
+
   return (
     <div>
         <GoBackBtn />
@@ -30,8 +32,7 @@ function EventPage() {
         title={eventInfo.event_title} 
         location={eventInfo.event_location} 
         />
-        console.log("eventId:", id);
-        <DeleteButton eventId={ id } /> 
+        <DeleteButton eventId={id} /> 
     </div>
   )
 }
