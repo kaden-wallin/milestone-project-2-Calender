@@ -8,7 +8,7 @@ import { react } from 'react'
         events.setItem('{eventInfo.event_location}', location)
         
     }
-    function update_event(data) {
+    function UpdateEvent(data) {
 
 
     return (
@@ -44,3 +44,5 @@ import { react } from 'react'
       </div>
     )
 }
+
+export default UpdateEvent

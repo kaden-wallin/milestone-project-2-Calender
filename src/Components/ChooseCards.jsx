@@ -17,7 +17,7 @@ function ChooseCards(props) {
                  <CardHeader color="red" className="relative h-56">
                    <img
                      src={props.image}
-                     alt="img-blur-shadow"
+                     alt="screenshot of calender or form"
                      className="h-full w-full"
                    />
                  </CardHeader>
