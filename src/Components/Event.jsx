@@ -1,26 +1,12 @@
-<<<<<<< HEAD
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-=======
-import { useState, useEffect } from 'react'
-import { useLocation, useParams, useNavigate } from 'react-router-dom'
->>>>>>> d9f3107fe6c05b276db1c1779166f456a76eded2
 import GoBackBtn from './GoBackBtn'
 import events from '../controller/event_controller'
 
 function Event(props) {
   const [showButton, setShowButton] = useState(true)
   const path = useLocation()
-  const { title } = useParams()
   const navigate = useNavigate()
-
-  useEffect(() => {
-    if (path.pathname === '/calender') {
-      setShowButton(false)
-    }
-  }, [path.pathname])
-
-    const { title } = useParams();
 
      // err message
        if (!props) {
