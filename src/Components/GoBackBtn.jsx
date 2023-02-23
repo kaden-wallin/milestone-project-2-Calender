@@ -1,4 +1,5 @@
 import {useNavigate}  from 'react-router-dom'
+import { Button } from "@material-tailwind/react";
 
 function GoBackBtn() {
     const previousPage = useNavigate(GoBackBtn)
@@ -8,8 +9,8 @@ function GoBackBtn() {
     }
 
   return (
-    <div >
-      <button  onClick = {handleClick}>Go Back</button>
+    <div className=''>
+      <Button variant='text' onClick = {handleClick}>Return</Button>
     </div>
   )
 }

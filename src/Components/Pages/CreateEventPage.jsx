@@ -40,14 +40,15 @@ function CreateEventPage() {
   }
 
   return (
-    <div className=' text-center  m-auto w-auto items-center  justify-between font-bold bg-red-400'>
+    <div>
       <GoBackBtn />
+    <div className=' text-center  m-auto w-auto items-center  justify-between font-bold bg-red-500'>
       <div class='container flex flex-wrap justify-center items-center m-auto w-auto'>
       <form onSubmit={handleSubmit} class= 'w-full max-w-lg'>
       <div class='flex flex-wrap justify-center items-center -mx-3 mb-6 '>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label class="block tracking-wide text-black-700 text-xl font-bold mb-2"  htmlFor="user-id">User ID: </label>
-          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded 
+          <label class="block tracking-wide text-black-200 text-xl font-bold mb-2"  htmlFor="user-id">User ID: </label>
+          <input class="appearance-none block w-full bg-gray-200 text-gray-200 border border-rose-900 rounded 
             py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="user-id" type="number" />
           </div>
           <div class="w-full md:w-1/2 px-3">
@@ -70,6 +71,7 @@ function CreateEventPage() {
       </form>
       </div>
       {message && <p>{message}</p>}
+    </div>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import Event from '../Event';
 import { useParams } from 'react-router-dom';
+import GoBackBtn from '../GoBackBtn';
 
 function EventPage() {
     const [eventInfo, setEventInfo] = useState({})
@@ -22,6 +23,7 @@ function EventPage() {
 
   return (
     <div>
+        <GoBackBtn />
         <Event 
         key={id} 
         id={eventInfo.event_ID} 
