@@ -1,6 +1,11 @@
-import { React } from 'react'
-import { useState } from 'react'
+import { createClient } from '@supabase/supabase-js'
+import React, { useState } from 'react'
 
+const supabaseUrl = "https://keztfhsconadyzpjouyc.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRmaHNjb25hZHl6cGpvdXljIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYzNTE5NDUsImV4cCI6MTk5MTkyNzk0NX0.Klp0MeA68AP0nNonvKmn1wDh_RZL-HoMtexKYUSaEB8"
+
+const supabase = createClient(supabaseUrl, supabaseKey)
+const auth = supabase.auth
 
 export const Login = (props) => {
     const [email, setEmail ] = useState('')
@@ -9,6 +14,24 @@ export const Login = (props) => {
 
     async function handleSubmit (e) {
         e.preventDefault()
+
+        try {
+            const { user, session, error } = await auth.signIn({
+            email,
+            password,
+        })
+
+        if (error) {
+            throw error;
+        }
+
+        console.log(user)
+        console.log(session)
+
+        } catch (error) {
+            console.error(error)
+        }
+
     }
 
     return (

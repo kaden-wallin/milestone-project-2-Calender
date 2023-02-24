@@ -19,6 +19,19 @@ export const Register = (props) => {
         console.log(email)
         console.log(password)
 
+        const { data: existingUser, error: selectError } = await supabase
+            .from('user_access')
+            .select('*')
+            .eq('user_email', email)
+            .single()
+
+            console.log('existingUser:', existingUser)
+
+        if(existingUser) {
+            setMessage('Email is already in use')
+            return
+        }
+
         //EXTRACTS NEW USER DATA
         const newUserData = {
             user_email: email,
@@ -26,18 +39,17 @@ export const Register = (props) => {
         }
 
         //MAKES THE API CALL
-        const { data, error } = await supabase
+        const { data: newUser, error: insertError } = await supabase
             .from('user_access')
             .insert(newUserData)
             
-        if (error) {
+        if (insertError) {
             setMessage('Your account cannot be created at this time');
-            console.error(error.message)
+            console.error(insertError.message)
         } else {
             setMessage('Account created successfully, have fun!');
         
-        // REDIRECTS TO THE CAlENDAR PAGE
-        navigate('/choose') 
+        props.onFormSwitch('login')
         } 
     } 
 
