@@ -42,12 +42,12 @@ function NavBar(props) {
            </div>
            <div className="lg:flex flex-grow items-center" id="example-navbar-warning">
              <ul className="flex flex-col lg:flex-row list-none ml-auto space-x-2" >
-                 <li className="nav-item">
+                 <li className="nav-item my-2">
                    <Button onClick={() => {toggleForm('login', 'Login'); setShowModal(true);}} className="px-5 py-3 flex items-center text-s uppercase font-bold leading-snug bg-red-600 text-white hover:opacity-75">
                      Login
                    </Button>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item my-2">
                    <Button onClick={() => {toggleForm('register', 'Sign Up'); setShowModal(true)}} className="px-4 py-3 flex items-center text-s uppercase font-bold leading-snug bg-red-600 text-white hover:opacity-75">
                      Sign Up
                    </Button>
