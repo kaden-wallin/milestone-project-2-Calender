@@ -1,38 +1,46 @@
 import { createClient } from '@supabase/supabase-js'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const supabaseUrl = "https://keztfhsconadyzpjouyc.supabase.co"
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRmaHNjb25hZHl6cGpvdXljIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYzNTE5NDUsImV4cCI6MTk5MTkyNzk0NX0.Klp0MeA68AP0nNonvKmn1wDh_RZL-HoMtexKYUSaEB8"
 
 const supabase = createClient(supabaseUrl, supabaseKey)
-const auth = supabase.auth
 
 export const Login = (props) => {
+    const navigate = useNavigate()
     const [email, setEmail ] = useState('')
     const [password, setPassword ] = useState('')
+    const [message, setMessage] = useState('');
+    const [logInfo, setLogInfo ] = useState([]) 
    
-
     async function handleSubmit (e) {
         e.preventDefault()
+        console.log(email)
+        console.log(password)
 
-        try {
-            const { user, session, error } = await auth.signIn({
-            email,
-            password,
-        })
+        const { data: user, error } = await supabase
+            .from('user_access')
+            .select('*')
+            .eq('user_email', email)
+            .eq('user_password', password)
+            .single()
 
-        if (error) {
-            throw error;
-        }
+            if (error) {
+                setMessage('Error logging in')
+                console.error(error.message)
+            } else if (!user) {
+                setMessage('Incorrect email or password')
+            } else {
+                setMessage('Logged in successfully')
+                
+                localStorage.setItem("login info", JSON.stringify(user, password))
+                var loginInfo = JSON.parse(localStorage.getItem("login info"))
+                console.log(loginInfo)
 
-        console.log(user)
-        console.log(session)
-
-        } catch (error) {
-            console.error(error)
-        }
-
-    }
+                navigate('/calender')
+            }
+        } 
 
     return (
         <>
@@ -54,6 +62,7 @@ export const Login = (props) => {
                     </div>
                 </div>
               </form>
+              {message}
               </div>
               <button class="appearance-none block w-full bg-gray-200 text-black-700 border rounded py-3 px-4 leading-tight 
               focus:outline-none focus:bg-white focus:border-gray-500 hover:transform hover:scale-105 transition duration-300 hover:border-black" onClick={() => props.onFormSwitch('register')}> Don't have an account? Register here. </button>
