@@ -41,22 +41,22 @@ export const Login = (props) => {
                 <div class= 'flex flex-wrap justify-center items-center -mx-3 mb-6 '>
                     <div class= "w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class= "block tracking-wide text-black-700 text-xl font-bold mb-2"for='user_email'> Email </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded 
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded 
             py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" value={email} onChange={(e) => setEmail(e.target.value)} type= 'email' placeholder="youremail@email.com" id="user_email" required/>
                     </div>
                     <div class= "w-full md:w-1/2 px-3">
                         <label class= "block tracking-wide text-black-700 text-xl font-bold mb-2" for='user_password'> Password </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded 
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded 
             py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" value={password} onChange={(e) => setPassword(e.target.value)} type= 'password' placeholder="****" id="user_password" required/>
                     </div>
                     <div>
-                        <button class= "appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" onClick={handleSubmit} type='submit'> Log In </button>
+                        <button class= "appearance-none block w-full bg-gray-200 text-black-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 hover:transform hover:scale-110 transition duration-300 hover:border-black" onClick={handleSubmit} type='submit'> Log In </button>
                     </div>
                 </div>
               </form>
               </div>
-              <button class="appearance-none block w-full bg-gray-200 text-black-700 border border-rose-900 rounded py-3 px-4 leading-tight 
-              focus:outline-none focus:bg-white focus:border-gray-500" onClick={() => props.onFormSwitch('register')}> Don't have an account? Register here. </button>
+              <button class="appearance-none block w-full bg-gray-200 text-black-700 border rounded py-3 px-4 leading-tight 
+              focus:outline-none focus:bg-white focus:border-gray-500 hover:transform hover:scale-105 transition duration-300 hover:border-black" onClick={() => props.onFormSwitch('register')}> Don't have an account? Register here. </button>
         </>
         )
     }
