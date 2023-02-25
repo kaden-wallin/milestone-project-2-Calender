@@ -1,4 +1,5 @@
 // DEPENDENCIES
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -12,7 +13,6 @@ require('pg')
 app.use(cors({
     origin: "https://milestone-project-2-calender-updated-p5n89iklt.vercel.app/"
 }))
-require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
