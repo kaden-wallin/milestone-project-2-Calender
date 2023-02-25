@@ -8,7 +8,7 @@ function DeleteButton({ eventId }) {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:4002/api/events/${eventId}`, {
+      const response = await fetch(`/api/events/${eventId}`, {
         method: "DELETE",
       });
       const data = await response.json();
