@@ -1,11 +1,11 @@
 // DEPENDENCIES
-const config = require('./config/config')
 const express = require('express')
 const app = express()
 const path = require('path')
 const cors = require('cors')
 const { Sequelize } = require('sequelize')
 const port = process.env.PORT || 4002;
+const config = require('./config/config')
 require('pg')
 
 // CONFIGURATION / MIDDLEWARE
