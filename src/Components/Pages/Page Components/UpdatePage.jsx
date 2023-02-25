@@ -10,7 +10,7 @@ function UpdatePage() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`http://localhost:4002/api/events/${id}`);
+      const response = await fetch(`/api/events/${id}`);
       const eventData = await response.json();    
       setEventInfo(eventData);
     }

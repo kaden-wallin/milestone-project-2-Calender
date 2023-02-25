@@ -12,7 +12,7 @@ function Calender() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('http://localhost:4002/api/events');
+      const response = await fetch('/api/events');
       const eventData = await response.json();
       const newArr = eventData.map((evt) => {
         const { event_ID: id, event_title: title, event_location: location, event_date: date } = evt;
