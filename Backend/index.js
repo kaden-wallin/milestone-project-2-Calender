@@ -28,29 +28,22 @@ try {
 }
 
 //SERVER STATIC RENDERING
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
     console.log(path.join(__dirname, "public", "index.html"))
    });
 
-// ROOT
-app.get('/backend', (req, res) => {
-    res.status(200).json({
-        message: 'Welcome to the Calender App'
-    })
-})
-
 //CONTROLLERS
-const eventsController = require('./src/controller/event_controller')
+const eventsController = require('../src/controller/event_controller')
 app.use('/api/events', eventsController)
 
-const friendsController = require('./src/controller/friend_controller')
+const friendsController = require('../src/controller/friend_controller')
 app.use('/api/friends', friendsController)
 
-const usersController = require('./src/controller/user_controller')
+const usersController = require('../src/controller/user_controller')
 app.use('/api/users', usersController)
 
-const reportsController = require('./src/controller/report_controller')
+const reportsController = require('../src/controller/report_controller')
 app.use('/api/reports', reportsController)
 
 // LISTEN
