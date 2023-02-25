@@ -1,4 +1,5 @@
 // DEPENDENCIES
+const pg = require('pg')
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -7,7 +8,9 @@ const { Sequelize } = require('sequelize')
 const port = process.env.PORT || 4002;
 
 // CONFIGURATION / MIDDLEWARE
-app.use(cors())
+app.use(cors({
+    origin: "https://milestone-project-2-calender-updated-p5n89iklt.vercel.app/"
+}))
 require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
