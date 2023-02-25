@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     user_ID: {
     type: DataTypes.SMALLINT,
     allowNull: false

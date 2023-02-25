@@ -20,6 +20,7 @@ function CreateEventPage() {
     const formData = {
       user_ID: loginInfo ? loginInfo.user_ID : 1,
       event_title: document.getElementById('event-title').value,
+      description: document.getElementById('description').value,
       event_date: document.getElementById('choose-date').value,
       event_location: document.getElementById('location').value,
     }
@@ -56,6 +57,11 @@ function CreateEventPage() {
             <label class= "block tracking-wide text-black-700 text-xl font-bold mb-2" htmlFor="event-title">Event Title: </label>
             <input class= "appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
            id="event-title" type="text" />
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label class= "block tracking-wide text-black-700 text-xl font-bold mb-2" htmlFor="description">Description: </label>
+            <input class= "appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+           id="description" type="text" />
           </div>
           <div class= 'w-full md:w-1/3 px-3 mb-6 md:mb-0'>
             <label class= 'block tracking-wide text-black-700 text-xl font-bold mb-2' htmlFor="choose-date">Date: </label>

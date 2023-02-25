@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.DATEONLY,
         allowNull: false
       },
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: true
+      },
       user_ID: {
         type: Sequelize.SMALLINT,
         allowNull: false,

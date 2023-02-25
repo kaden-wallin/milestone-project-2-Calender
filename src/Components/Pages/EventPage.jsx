@@ -29,7 +29,8 @@ function EventPage() {
         id={eventInfo.event_ID} 
         date={eventInfo.event_date} 
         title={eventInfo.event_title} 
-        location={eventInfo.event_location} 
+        location={eventInfo.event_location}
+        description={eventInfo.description} 
         />
         <div className='flex flex-row justify-center my-5 space-x-4'>
           <Link to= {`/update/${id}`}>

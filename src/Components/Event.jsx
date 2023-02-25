@@ -22,6 +22,9 @@ function Event(props) { // we're going to pass some sort of props in the future
         <h2 className="text-lg font-bold mb-2">
         {props.location}
         </h2>
+        <h3 className="text-lg my-4">
+        {props.description}
+        </h3>
          <p className="text-gray-600">
           {props.date}
         </p>
