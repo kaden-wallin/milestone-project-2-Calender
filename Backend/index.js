@@ -16,12 +16,6 @@ require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-//SERVER STATIC RENDERING
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, "../build/index.html"));
-    console.log(path.join(__dirname, "../build/index.html"))
-   });
-
 //CONTROLLERS
 const eventsController = require('./controller/event_controller')
 app.use('/api/events', eventsController)
@@ -34,6 +28,12 @@ app.use('/api/users', usersController)
 
 const reportsController = require('./controller/report_controller')
 app.use('/api/reports', reportsController)
+
+//SERVER STATIC RENDERING
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, "../build/index.html"));
+    console.log(path.join(__dirname, "../build/index.html"))
+   });
 
 // LISTEN
 app.listen(port, () => {
