@@ -1,5 +1,4 @@
 // DEPENDENCIES
-require('pg')
 const config = require('./config/config')
 const express = require('express')
 const app = express()
@@ -7,6 +6,7 @@ const path = require('path')
 const cors = require('cors')
 const { Sequelize } = require('sequelize')
 const port = process.env.PORT || 4002;
+require('pg')
 
 // CONFIGURATION / MIDDLEWARE
 app.use(cors({
