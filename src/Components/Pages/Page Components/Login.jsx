@@ -34,11 +34,10 @@ export const Login = (props) => {
             } else {
                 setMessage('Logged in successfully')
                 
-                localStorage.setItem("login info", JSON.stringify(user, password))
-                var loginInfo = JSON.parse(localStorage.getItem("login info"))
+                sessionStorage.setItem("login info", JSON.stringify(user, password))
+                const loginInfo = JSON.parse(sessionStorage.getItem("login info"))
                 console.log(loginInfo)
 
-                navigate('/calender')
             }
         } 
 

@@ -11,13 +11,14 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 function CreateEventPage() {
   const navigate = useNavigate()
   const [message, setMessage] = useState('');
+  const loginInfo = JSON.parse(sessionStorage.getItem("login info"))
 
   async function handleSubmit(event) {
     event.preventDefault()
 
     //EXTRACTS THE FORM DATA
     const formData = {
-      user_ID: document.getElementById('user-id').value,
+      user_ID: loginInfo ? loginInfo.user_ID : 1,
       event_title: document.getElementById('event-title').value,
       event_date: document.getElementById('choose-date').value,
       event_location: document.getElementById('location').value,
@@ -46,11 +47,11 @@ function CreateEventPage() {
       <div class='container flex flex-wrap justify-center items-center m-auto w-auto'>
       <form onSubmit={handleSubmit} class= 'w-full max-w-lg'>
       <div class='flex flex-wrap justify-center items-center -mx-3 mb-6 '>
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        {/* <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label class="block tracking-wide text-black-200 text-xl font-bold mb-2 "  htmlFor="user-id">User ID: </label>
           <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded 
             py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="user-id" type="number" />
-          </div>
+          </div> */}
           <div class="w-full md:w-1/2 px-3">
             <label class= "block tracking-wide text-black-700 text-xl font-bold mb-2" htmlFor="event-title">Event Title: </label>
             <input class= "appearance-none block w-full bg-gray-200 text-gray-700 border border-rose-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
