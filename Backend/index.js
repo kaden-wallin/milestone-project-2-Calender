@@ -1,5 +1,5 @@
 // DEPENDENCIES
-const pg = require('pg')
+require('pg')
 const config = require('./config/config')
 const express = require('express')
 const app = express()
