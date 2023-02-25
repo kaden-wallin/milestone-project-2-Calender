@@ -16,21 +16,6 @@ require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-// SEQUELIZE CONNECTION
-const sequelize = new Sequelize({
-    storage: process.env.PG_URI,
-    dialect: 'postgres',
-    username: 'postgres',
-    password: process.env.PG_PASSWORD
-  })
-
-try {
-    sequelize.authenticate() 
-    console.log(`Connected with Sequelize at ${process.env.PG_URI}`) 
-} catch(err) {
-    console.log(`Unable to connect to PG: ${err}`) 
-}
-
 //SERVER STATIC RENDERING
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "../build/index.html"));
