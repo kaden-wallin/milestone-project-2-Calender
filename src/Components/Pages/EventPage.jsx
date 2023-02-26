@@ -13,7 +13,7 @@ function EventPage() {
 
     useEffect(() => {
       async function fetchData() {
-        const response = await fetch(`/api/events/${id}`);
+        const response = await fetch(`${process.env.URI}/api/events/${id}`);
         const eventData = await response.json();    
         setEventInfo(eventData);
       }
