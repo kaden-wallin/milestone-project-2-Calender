@@ -24,7 +24,7 @@ function Calender() {
     }
 
     fetchData();
-  }, []);
+  }, [eventInfo, eventData]);
 
   const eventParam = (event) => {
     return event.id;
