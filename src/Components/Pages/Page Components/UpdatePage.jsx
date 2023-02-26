@@ -10,7 +10,7 @@ function UpdatePage() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`https://milestone-project-2-calender-backe-git-fa2279-mile-stone-2-team.vercel.app/api/events/${id}`);
+      const response = await fetch(`https://milestone-project-2-calender-backend2-18b2r9jtd.vercel.app/api/events/${id}`);
       const eventData = await response.json();    
       setEventInfo(eventData);
     }
