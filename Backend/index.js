@@ -17,6 +17,11 @@ app.use(cors({
   optionsSuccessStatus: 204
 }))
 
+app.use((req, res, next) => {
+  res.setHeader('Content-Type', 'application/json');
+  next();
+});
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 //app.use(express.static(path.join(__dirname, "../build")));
