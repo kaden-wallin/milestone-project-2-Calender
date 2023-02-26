@@ -11,8 +11,8 @@ users.post('/', async (req, res) => {
             message: 'Successfully registered',
             data: newAccount
         })
-    } 
-    catch(err) {
+    }
+    catch (err) {
         res.status(500).json(err)
     }
 })
@@ -28,7 +28,7 @@ users.put('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully updated ${updatedAccount} user(s)`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -44,7 +44,7 @@ users.delete('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully deleted ${deletedAccount}`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })

@@ -21,14 +21,14 @@ function UpdatePage() {
   return (
     <div>
       <GoBackBtn />
-        <UpdateEvent 
-         key={id} 
-         id={eventInfo.event_ID} 
-         date={eventInfo.event_date} 
-         title={eventInfo.event_title} 
-         location={eventInfo.event_location} 
-         user_id={eventInfo.user_ID}
-        /> 
+      <UpdateEvent
+        key={id}
+        id={eventInfo.event_ID}
+        date={eventInfo.event_date}
+        title={eventInfo.event_title}
+        location={eventInfo.event_location}
+        user_id={eventInfo.user_ID}
+      />
     </div>
   )
 }

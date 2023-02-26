@@ -11,7 +11,7 @@ require('pg')
 
 // CONFIGURATION / MIDDLEWARE
 app.use(cors({
-    origin: 'https://milestone-project-2-calender-backend2.vercel.app,http://localhost/4001',
+    origin: 'https://milestone-project-2-calender-backend2.vercel.app,http://localhost/3300',
   methods: 'GET,PUT,POST,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204
@@ -47,5 +47,5 @@ app.use('/api/reports', reportsController)
 
 // LISTEN
 app.listen(port, () => {
-    console.log(`🎸 Rockin' on port: ${port}`)
+  console.log(`🎸 Rockin' on port: ${port}`)
 })

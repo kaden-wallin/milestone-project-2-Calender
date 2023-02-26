@@ -1,12 +1,12 @@
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
 
 function Calender() {
   const navigate = useNavigate()
- 
+
   const [eventInfo, setEventInfo] = useState([])
 
 
@@ -39,18 +39,18 @@ function Calender() {
     navigate(`/events/${eventId}`);
   }
 
-    return (
-        <FullCalendar
-        plugins = {[ dayGridPlugin ]}
-        initialView = "dayGridMonth"
-        events = {eventInfo}
-        eventContent = {eventInfo.title}
-        selectable = {true}
-        eventClick = {handleNavigateClick}
-        eventColor = {'red'}
-      /> 
-         
-    )
-  }
-  
-  export default Calender
+  return (
+    <FullCalendar
+      plugins={[dayGridPlugin]}
+      initialView="dayGridMonth"
+      events={eventInfo}
+      eventContent={eventInfo.title}
+      selectable={true}
+      eventClick={handleNavigateClick}
+      eventColor={'red'}
+    />
+
+  )
+}
+
+export default Calender

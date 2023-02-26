@@ -22,7 +22,7 @@ events.get('/:id', async (req, res) => {
             where: { event_ID: req.params.id }
         })
         res.status(200).json(foundEvent)
-    } 
+    }
     catch (error) {
         res.status(500).json(error)
     }
@@ -36,8 +36,8 @@ events.post('/', async (req, res) => {
             message: 'Successfully added a new event to the calendar',
             data: newEvent
         })
-    } 
-    catch(err) {
+    }
+    catch (err) {
         res.status(500).json(err)
     }
 })
@@ -53,7 +53,7 @@ events.put('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully updated ${updateEvent} event(s)`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -69,7 +69,7 @@ events.delete('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully deleted ${deletedEvents} event(s)`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })

@@ -8,17 +8,17 @@ function LandingPage() {
   const [showForm, setShowForm] = useState(false);
 
 
-  const toggleForm= (formName) => {
+  const toggleForm = (formName) => {
     setCurrentForm(formName)
     setShowForm(true)
   }
 
   return (
-      
+
     <div className=' text-center' >
-        <Link to = '/choose' >
-            <button className = 'm-14 inline-flex items-center justify-center rounded-full p-8 t mt-64 bg-red-600 text-white text-9xl text-red-600 hover:bg-white hover:text-red-500 hover:transform hover:scale-110 transition duration-300' type = 'button'>Start</button>
-        </Link>
+      <Link to='/choose' >
+        <button className='m-14 inline-flex items-center justify-center rounded-full p-8 t mt-64 bg-red-600 text-white text-9xl text-red-600 hover:bg-white hover:text-red-500 hover:transform hover:scale-110 transition duration-300' type='button'>Start</button>
+      </Link>
       {/* 
       // Decide as group if we wanna keep this link
       <div>
