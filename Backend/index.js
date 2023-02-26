@@ -11,16 +11,8 @@ require('pg')
 
 // CONFIGURATION / MIDDLEWARE
 app.use(cors({
-    origin: "https://milestone-project-2-calender.vercel.app",
-    methods: 'GET,PUT,POST,DELETE',
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-
-  exposedHeaders: ['Access-Control-Allow-Origin']
-}), (req, res, next) => {
-  console.log('Request received from:', req.headers.origin);
-  next();
-});
+    origin: "https://milestone-project-2-calender-updated-ri0ti32ob.vercel.app",
+}))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
