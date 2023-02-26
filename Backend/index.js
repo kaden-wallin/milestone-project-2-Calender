@@ -13,6 +13,7 @@ require('pg')
 app.use(cors({
     origin: "https://milestone-project-2-calender.vercel.app/"
 }))
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 //app.use(express.static(path.join(__dirname, "../build")));

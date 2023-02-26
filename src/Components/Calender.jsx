@@ -12,7 +12,7 @@ function Calender() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`${process.env.URI}/api/events`);
+      const response = await fetch(`https://milestone-project-2-calender-backend2-nzhvktzl0.vercel.app/api/events`);
       const eventData = await response.json();
       const newArr = eventData.map((evt) => {
         const { event_ID: id, event_title: title, event_location: location, event_date: date } = evt;
@@ -23,8 +23,6 @@ function Calender() {
 
     fetchData();
   }, []);
-
-  console.log('eventInfo:', eventInfo)
 
   const eventParam = (event) => {
     return event.id;
