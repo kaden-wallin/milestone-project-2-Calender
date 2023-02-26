@@ -11,7 +11,7 @@ function UpdatePage() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(`https://milestone-project-2-calender-backend2.vercel.app/api/events/${id}`);
-      const eventData = await response.json();    
+      const eventData = await response.json();
       setEventInfo(eventData);
     }
 
@@ -21,14 +21,14 @@ function UpdatePage() {
   return (
     <div>
       <GoBackBtn />
-        <UpdateEvent 
-         key={id} 
-         id={eventInfo.event_ID} 
-         date={eventInfo.event_date} 
-         title={eventInfo.event_title} 
-         location={eventInfo.event_location} 
-         user_id={eventInfo.user_ID}
-        /> 
+      <UpdateEvent
+        key={id}
+        id={eventInfo.event_ID}
+        date={eventInfo.event_date}
+        title={eventInfo.event_title}
+        location={eventInfo.event_location}
+        user_id={eventInfo.user_ID}
+      />
     </div>
   )
 }

@@ -21,7 +21,7 @@ friends.get('/:id', async (req, res) => {
             where: { friend_ID: req.params.id }
         })
         res.status(200).json(foundFriend)
-    } 
+    }
     catch (error) {
         res.status(500).json(error)
     }
@@ -35,8 +35,8 @@ friends.post('/', async (req, res) => {
             message: `Successfully befriended ${newFriend}`,
             data: newFriend
         })
-    } 
-    catch(err) {
+    }
+    catch (err) {
         res.status(500).json(err)
     }
 })
@@ -52,7 +52,7 @@ friends.delete('/:id', async (req, res) => {
         res.status(200).json({
             message: `Successfully removed ${deletedFriends} friend(s)`
         })
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
