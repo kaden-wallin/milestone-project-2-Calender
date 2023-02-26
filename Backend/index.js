@@ -11,7 +11,7 @@ require('pg')
 
 // CONFIGURATION / MIDDLEWARE
 app.use(cors({
-    origin: "https://milestone-project-2-calender-updated-ri0ti32ob.vercel.app",
+    origin: "https://milestone-project-2-calender-updated-ri0ti32ob.vercel.app/",
 }))
 
 app.use(express.json())
