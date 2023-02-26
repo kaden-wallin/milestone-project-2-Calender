@@ -32,7 +32,7 @@ function Calender() {
   const handleNavigateClick = (eventClickInfo) => {
     const event = eventClickInfo.event;
     const eventId = eventParam(event);
-    navigate(`/event/${eventId}`);
+    navigate(`/events/${eventId}`);
   }
 
     return (
