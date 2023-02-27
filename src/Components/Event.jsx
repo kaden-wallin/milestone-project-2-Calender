@@ -12,6 +12,8 @@ function Event(props) { // we're going to pass some sort of props in the future
     return <div>Page Not Found</div>
   }
 
+  console.log(props)
+
   return (
     <div className="flex justify-center">
       <div className="bg-white rounded-lg shadow-md p-[150px] ">
