@@ -48,7 +48,6 @@ function UpdateEvent(props) {
   return (
     <div className=' text-center  m-auto w-auto items-center  justify-between font-bold bg-red-500'>
       <div class='container flex flex-wrap justify-center items-center m-auto w-auto'>
-        <h1> Edit Event </h1>
         <form method='POST' action={`https://milestone-project-2-calender-backend-test-hd9u50k1b.vercel.app/api/events/${id}?_method=PUT`} class='w-full max-w-lg' onSubmit={handleSubmit}>
           <div class='flex flex-wrap justify-center items-center -mx-3 mb-6 '>
             {/* <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
