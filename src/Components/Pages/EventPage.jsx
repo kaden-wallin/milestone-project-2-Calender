@@ -21,6 +21,8 @@ function EventPage() {
       fetchData();
     }, [id]);
 
+    console.log('eventInfo:', eventInfo)
+
   return (
     <div>
       <GoBackBtn />

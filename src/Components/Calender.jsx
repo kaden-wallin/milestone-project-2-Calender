@@ -19,14 +19,12 @@ function Calender() {
         return { id, title, location, date }
       })
       setEventInfo(newArr);
-      console.log('eventData', eventData)
-      console.log('eventInfo:', eventInfo);
+
     }
 
     fetchData();
   }, []);
 
-  console.log('eventInfo:', eventInfo)
 
   const eventParam = (event) => {
     return event.id;
