@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-//app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 //CONTROLLERS
 const eventsController = require('./controller/event_controller')
@@ -40,10 +40,10 @@ const reportsController = require('./controller/report_controller')
 app.use('/api/reports', reportsController)
 
 //SERVER STATIC RENDERING
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, "../build/index.html"));
-//     console.log(path.join(__dirname, "../build/index.html"))
-//    });
+ app.get('/', (req, res) => {
+     res.sendFile(path.join(__dirname, "../build/index.html"));
+     console.log(path.join(__dirname, "../build/index.html"))
+    });
 
 // LISTEN
 app.listen(port, () => {
