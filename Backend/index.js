@@ -11,7 +11,7 @@ require('pg')
 
 // CONFIGURATION / MIDDLEWARE
 app.use(cors({
-    origin: 'https://milestone-project-2-calender-backend3.vercel.app',
+    origin: 'https://milestone-project-2-calender-7565lacrv-mile-stone-2-team.vercel.app/',
   methods: 'GET,PUT,POST,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204
