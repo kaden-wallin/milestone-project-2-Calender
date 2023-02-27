@@ -1,4 +1,4 @@
-# Welcome to **Trugle Calendar: Meets Commune**
+# Welcome to *Trugle Calendar: Meets Commune*
 ## The oldstate branch is the new default branch
 
 ## The inspiration for the application was an app to make it easier to make new friends and find things to do
