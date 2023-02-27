@@ -11,7 +11,7 @@ require('pg')
 
 // CONFIGURATION / MIDDLEWARE
 app.use(cors({
-    origin: 'http://localhost:3300/',
+    origin: 'http://localhost:4001',
   methods: 'GET,PUT,POST,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204
