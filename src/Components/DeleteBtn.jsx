@@ -8,7 +8,7 @@ function DeleteButton({ eventId }) {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`https://milestone-project-2-calender-backe-git-35a6b0-mile-stone-2-team.vercel.app/api/events/${eventId}`, {
+      const response = await fetch(`${process.env.URI}/api/events/${eventId}`, {
         method: "DELETE",
       });
       const data = await response.json();
