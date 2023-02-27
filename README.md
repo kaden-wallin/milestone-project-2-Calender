@@ -10,7 +10,10 @@
 
 ## Link to deployment:
 
-https://milestone-project-2-calender-updated-dwa5jo6id.vercel.app/
+https://milestone-project-2-calender-frontend4.vercel.app/ Front End
+
+https://milestone-project-2-calender-backend-test-hd9u50k1b.vercel.app/ Back End
 
 ## Outstanding bugs or unfinished functionality:
+### The update event page doesn't autofill placeholder text with the current event data
 
