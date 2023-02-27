@@ -17,3 +17,5 @@ https://milestone-project-2-calender-backend-test-hd9u50k1b.vercel.app/ Back End
 ## Outstanding bugs or unfinished functionality:
 ### The update event page doesn't autofill placeholder text with the current event data
 
+####Just to be clear the above bug only happens on the deployment but works fine when built with local host
+
