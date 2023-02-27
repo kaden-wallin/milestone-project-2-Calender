@@ -12,7 +12,7 @@ function Calender() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`https://milestone-project-2-calender-backe-git-35a6b0-mile-stone-2-team.vercel.app/api/events`);
+      const response = await fetch(`${process.env.URI}/api/events`);
       const eventData = await response.json();
       const newArr = eventData.map((evt) => {
         const { event_ID: id, event_title: title, event_location: location, event_date: date } = evt;
