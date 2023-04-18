@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import GoBackBtn from '../GoBackBtn'
 import Calender from '../Calender'
 
-function CalenderPage() {
+function CalenderPage(): JSX.Element {
 
   return (
     <div >

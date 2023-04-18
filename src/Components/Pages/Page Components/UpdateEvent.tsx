@@ -7,30 +7,32 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+interface UpdateEventProps {
+  id: string
+}
 
-function UpdateEvent(props) {
+function UpdateEvent(props: UpdateEventProps): JSX.Element {
   const [message, setMessage] = useState('');
   const updatedEventPage = useNavigate()
   const loginInfo = JSON.parse(sessionStorage.getItem("login info"))
 
-  const { id } = useParams()
+  const { id } = useParams<{ id: string }>()
 
-
-  async function handleSubmit(event) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const formData = {
       user_ID: loginInfo ? loginInfo.user_ID : 1,
-      event_title: document.getElementById('event-title').value,
-      description: document.getElementById('description').value,
-      event_date: document.getElementById('choose-date').value,
-      event_location: document.getElementById('location').value,
+      event_title: document.getElementById('event-title')!.value,
+      description: document.getElementById('description')!.value,
+      event_date: document.getElementById('choose-date')!.value,
+      event_location: document.getElementById('location')!.value,
     }
 
     const { data, error } = await supabase
       .from('events')
       .update(formData)
-      .eq('event_ID', id)
+      .eq('event_ID', props.id)
 
 
     if (error) {
@@ -40,7 +42,7 @@ function UpdateEvent(props) {
       setMessage('Item edited successfully!');
 
       // REDIRECTS TO THE EVENT PAGE
-      updatedEventPage(`/event/${id}`)
+      updatedEventPage(`/event/${props.id}`)
     }
   }
 

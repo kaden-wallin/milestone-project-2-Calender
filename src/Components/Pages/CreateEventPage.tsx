@@ -8,13 +8,13 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-function CreateEventPage() {
-  const navigate = useNavigate()
+function CreateEventPage(): JSX.Element {
+  const navigate = useNavigate();
   const [message, setMessage] = useState('');
-  const loginInfo = JSON.parse(sessionStorage.getItem("login info"))
+  const loginInfo = JSON.parse(sessionStorage.getItem("login info") || "{}");
 
-  async function handleSubmit(event) {
-    event.preventDefault()
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
     //EXTRACTS THE FORM DATA
     const formData = {

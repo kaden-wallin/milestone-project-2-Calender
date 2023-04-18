@@ -7,14 +7,14 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-export const Login = (props) => {
+export const Login: React.FC<{ onFormSwitch: (value: string) => void }> = (props) => {
     const navigate = useNavigate()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [message, setMessage] = useState('');
-    const [logInfo, setLogInfo] = useState([])
+    const [email, setEmail] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
+    const [message, setMessage] = useState<string>('');
+    const [logInfo, setLogInfo] = useState<Array<any>>([])
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         console.log(email)
         console.log(password)
@@ -35,7 +35,7 @@ export const Login = (props) => {
             setMessage('Logged in successfully')
 
             sessionStorage.setItem("login info", JSON.stringify(user, password))
-            const loginInfo = JSON.parse(sessionStorage.getItem("login info"))
+            const loginInfo = JSON.parse(sessionStorage.getItem("login info") || '[]')
             console.log(loginInfo)
 
         }

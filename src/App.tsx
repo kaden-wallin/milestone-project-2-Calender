@@ -10,7 +10,7 @@ import UpdatePage from './Components/Pages/Page Components/UpdatePage';
 
 
 
-function App() {
+function App(): JSX.Element {
 
   return (
     <div className=" bg-red-600 min-h-screen">

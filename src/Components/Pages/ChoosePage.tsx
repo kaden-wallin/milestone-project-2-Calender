@@ -2,7 +2,7 @@ import ChooseCards from '../ChooseCards'
 import NavBar from '../NavBar'
 
 
-function ChoosePage() {
+function ChoosePage: React.FC = () => {
   return (
     <div>
       <NavBar />

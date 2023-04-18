@@ -5,11 +5,10 @@ import {
   CardHeader,
   CardBody,
   Typography,
-  Navbar,
 } from "@material-tailwind/react";
 
 
-function ChooseCards(props) {
+function ChooseCards(props: ChooseCardsProps) {
 
   return (
     <div>

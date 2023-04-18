@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Button } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom'
 
+interface DeleteButtonProps {
+  eventId: number;
+}
+
 function DeleteButton({ eventId }) {
   const [message, setMessage] = useState("");
   const navigate = useNavigate()

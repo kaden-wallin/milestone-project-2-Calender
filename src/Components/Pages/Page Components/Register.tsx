@@ -2,19 +2,23 @@ import { createClient } from '@supabase/supabase-js'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+interface RegisterProps {
+    onFormSwitch: (form: string) => void;
+}
+
 const supabaseUrl = "https://keztfhsconadyzpjouyc.supabase.co"
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlenRmaHNjb25hZHl6cGpvdXljIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzYzNTE5NDUsImV4cCI6MTk5MTkyNzk0NX0.Klp0MeA68AP0nNonvKmn1wDh_RZL-HoMtexKYUSaEB8"
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-export const Register = (props) => {
+const Register: React.FC<RegisterProps> = (props) => {
     const navigate = useNavigate()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [message, setMessage] = useState('');
-    const [logInfo, setLogInfo] = useState([])
+    const [email, setEmail] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
+    const [message, setMessage] = useState<string>('');
+    const [logInfo, setLogInfo] = useState<Array<any>>([])
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         console.log(email)
         console.log(password)

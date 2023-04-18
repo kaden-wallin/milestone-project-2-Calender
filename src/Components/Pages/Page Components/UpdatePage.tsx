@@ -1,17 +1,25 @@
-import { useState, useEffect } from 'react'
-import UpdateEvent from './UpdateEvent'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import UpdateEvent from './UpdateEvent';
+import { useParams } from 'react-router-dom';
 import GoBackBtn from '../../GoBackBtn';
 
-function UpdatePage() {
-  const [eventInfo, setEventInfo] = useState({})
+type EventInfo = {
+  event_ID: number;
+  event_date: string;
+  event_title: string;
+  event_location: string;
+  user_ID: number;
+};
 
-  const { id } = useParams(); // grabs id from the url 
+function UpdatePage() {
+  const [eventInfo, setEventInfo] = useState<EventInfo>({});
+
+  const { id } = useParams<{ id: string }>(); // grabs id from the url
 
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(`https://milestone-project-2-calender-backend-test-hd9u50k1b.vercel.app/events/${id}`);
-      const eventData = await response.json();    
+      const eventData = await response.json();
       setEventInfo(eventData);
     }
 
@@ -30,7 +38,7 @@ function UpdatePage() {
         user_id={eventInfo.user_ID}
       />
     </div>
-  )
+  );
 }
 
-export default UpdatePage
+export default UpdatePage;
